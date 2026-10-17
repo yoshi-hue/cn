@@ -1,0 +1,2 @@
+# Preserve curated evidence byte-for-byte so checksums survive Git checkout.
+submission/** -text

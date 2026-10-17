@@ -1,0 +1,1015 @@
+{
+  "schema_version": 2,
+  "created": "2026-09-21T18:47:35.224769+00:00",
+  "revision": "2f38a3f8ac13e8aa2f72a8e2c78167336e42d7fb",
+  "source_hash": "2ad916a6938167c3086624dc3fead7c422563b0ccf734a47244a8a05aa63c526",
+  "working_tree": "M .gitignore\n M Makefile\n M README.md\n M docker/Dockerfile\n M experiments/analyze.py\n M experiments/cases.py\n M experiments/run_all.py\n M experiments/run_case.py\n M experiments/runner.py\n M lantern/alerts.py\n M lantern/app.py\n M lantern/collector.py\n M lantern/config.py\n M lantern/decision.py\n M lantern/detector_baseline.py\n M lantern/detector_graph.py\n M lantern/features.py\n M lantern/graph_builder.py\n M lantern/metrics.py\n M lantern/mitigation.py\n M scripts/run_sweep.sh\n M tests/conftest.py\n M tests/test_decision.py\n M tests/test_detectors.py\n M tests/test_features.py\n M topo/lantern_topo.py\n M traffic/attacks/bruteforce.py\n M traffic/attacks/dos.py\n M traffic/attacks/lateral.py\n M traffic/attacks/portscan.py\n M traffic/common.py\n M traffic/normal.py\n?? .dockerignore\n?? ATTRIBUTION.md\n?? AUTHORS.md\n?? docker/constraints.txt\n?? docs/\n?? experiments/campaign.py\n?? experiments/integration.py\n?? experiments/package.py\n?? experiments/validation.py\n?? tests/test_evaluation.py\n?? traffic/observe.py\n?? traffic/probe.py\n?? traffic/service.py",
+  "image_id": "sha256:02a9778d3c856d1c8e93599eb1a2e53c13209a28a19fc31df6f25c7a6c224239",
+  "image_digests": [
+    "lantern-sdn-ids@sha256:02a9778d3c856d1c8e93599eb1a2e53c13209a28a19fc31df6f25c7a6c224239"
+  ],
+  "platform": "macOS-26.1-arm64-arm-64bit",
+  "machine": "arm64",
+  "python": "3.9.6 (default, Dec  2 2025, 07:27:58) \n[Clang 17.0.0 (clang-1700.6.3.2)]",
+  "matrix": [
+    {
+      "case": "C1",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 1,
+      "seed": 20100,
+      "warmup": 135.0,
+      "label": "detection-C1-none"
+    },
+    {
+      "case": "C1",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 2,
+      "seed": 20200,
+      "warmup": 135.0,
+      "label": "detection-C1-none"
+    },
+    {
+      "case": "C1",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 3,
+      "seed": 20300,
+      "warmup": 135.0,
+      "label": "detection-C1-none"
+    },
+    {
+      "case": "C1",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 4,
+      "seed": 20400,
+      "warmup": 135.0,
+      "label": "detection-C1-none"
+    },
+    {
+      "case": "C1",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 5,
+      "seed": 20500,
+      "warmup": 135.0,
+      "label": "detection-C1-none"
+    },
+    {
+      "case": "C2",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 1,
+      "seed": 20100,
+      "warmup": 135.0,
+      "label": "detection-C2-none"
+    },
+    {
+      "case": "C2",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 2,
+      "seed": 20200,
+      "warmup": 135.0,
+      "label": "detection-C2-none"
+    },
+    {
+      "case": "C2",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 3,
+      "seed": 20300,
+      "warmup": 135.0,
+      "label": "detection-C2-none"
+    },
+    {
+      "case": "C2",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 4,
+      "seed": 20400,
+      "warmup": 135.0,
+      "label": "detection-C2-none"
+    },
+    {
+      "case": "C2",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 5,
+      "seed": 20500,
+      "warmup": 135.0,
+      "label": "detection-C2-none"
+    },
+    {
+      "case": "C3",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 1,
+      "seed": 20100,
+      "warmup": 135.0,
+      "label": "detection-C3-none"
+    },
+    {
+      "case": "C3",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 2,
+      "seed": 20200,
+      "warmup": 135.0,
+      "label": "detection-C3-none"
+    },
+    {
+      "case": "C3",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 3,
+      "seed": 20300,
+      "warmup": 135.0,
+      "label": "detection-C3-none"
+    },
+    {
+      "case": "C3",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 4,
+      "seed": 20400,
+      "warmup": 135.0,
+      "label": "detection-C3-none"
+    },
+    {
+      "case": "C3",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 5,
+      "seed": 20500,
+      "warmup": 135.0,
+      "label": "detection-C3-none"
+    },
+    {
+      "case": "C4",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 1,
+      "seed": 20100,
+      "warmup": 135.0,
+      "label": "detection-C4-none"
+    },
+    {
+      "case": "C4",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 2,
+      "seed": 20200,
+      "warmup": 135.0,
+      "label": "detection-C4-none"
+    },
+    {
+      "case": "C4",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 3,
+      "seed": 20300,
+      "warmup": 135.0,
+      "label": "detection-C4-none"
+    },
+    {
+      "case": "C4",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 4,
+      "seed": 20400,
+      "warmup": 135.0,
+      "label": "detection-C4-none"
+    },
+    {
+      "case": "C4",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 5,
+      "seed": 20500,
+      "warmup": 135.0,
+      "label": "detection-C4-none"
+    },
+    {
+      "case": "C5",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 1,
+      "seed": 20100,
+      "warmup": 135.0,
+      "label": "detection-C5-none"
+    },
+    {
+      "case": "C5",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 2,
+      "seed": 20200,
+      "warmup": 135.0,
+      "label": "detection-C5-none"
+    },
+    {
+      "case": "C5",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 3,
+      "seed": 20300,
+      "warmup": 135.0,
+      "label": "detection-C5-none"
+    },
+    {
+      "case": "C5",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 4,
+      "seed": 20400,
+      "warmup": 135.0,
+      "label": "detection-C5-none"
+    },
+    {
+      "case": "C5",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 5,
+      "seed": 20500,
+      "warmup": 135.0,
+      "label": "detection-C5-none"
+    },
+    {
+      "case": "C6",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 1,
+      "seed": 20100,
+      "warmup": 135.0,
+      "label": "detection-C6-none"
+    },
+    {
+      "case": "C6",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 2,
+      "seed": 20200,
+      "warmup": 135.0,
+      "label": "detection-C6-none"
+    },
+    {
+      "case": "C6",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 3,
+      "seed": 20300,
+      "warmup": 135.0,
+      "label": "detection-C6-none"
+    },
+    {
+      "case": "C6",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 4,
+      "seed": 20400,
+      "warmup": 135.0,
+      "label": "detection-C6-none"
+    },
+    {
+      "case": "C6",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 5,
+      "seed": 20500,
+      "warmup": 135.0,
+      "label": "detection-C6-none"
+    },
+    {
+      "case": "C7",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 1,
+      "seed": 20100,
+      "warmup": 135.0,
+      "label": "detection-C7-none"
+    },
+    {
+      "case": "C7",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 2,
+      "seed": 20200,
+      "warmup": 135.0,
+      "label": "detection-C7-none"
+    },
+    {
+      "case": "C7",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 3,
+      "seed": 20300,
+      "warmup": 135.0,
+      "label": "detection-C7-none"
+    },
+    {
+      "case": "C7",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 4,
+      "seed": 20400,
+      "warmup": 135.0,
+      "label": "detection-C7-none"
+    },
+    {
+      "case": "C7",
+      "phase": "detection",
+      "mitigator": "none",
+      "trial": 5,
+      "seed": 20500,
+      "warmup": 135.0,
+      "label": "detection-C7-none"
+    },
+    {
+      "case": "C2",
+      "phase": "mitigation",
+      "mitigator": "baseline",
+      "trial": 1,
+      "seed": 20100,
+      "warmup": 135.0,
+      "label": "mitigation-C2-baseline"
+    },
+    {
+      "case": "C2",
+      "phase": "mitigation",
+      "mitigator": "baseline",
+      "trial": 2,
+      "seed": 20200,
+      "warmup": 135.0,
+      "label": "mitigation-C2-baseline"
+    },
+    {
+      "case": "C2",
+      "phase": "mitigation",
+      "mitigator": "baseline",
+      "trial": 3,
+      "seed": 20300,
+      "warmup": 135.0,
+      "label": "mitigation-C2-baseline"
+    },
+    {
+      "case": "C2",
+      "phase": "mitigation",
+      "mitigator": "baseline",
+      "trial": 4,
+      "seed": 20400,
+      "warmup": 135.0,
+      "label": "mitigation-C2-baseline"
+    },
+    {
+      "case": "C2",
+      "phase": "mitigation",
+      "mitigator": "baseline",
+      "trial": 5,
+      "seed": 20500,
+      "warmup": 135.0,
+      "label": "mitigation-C2-baseline"
+    },
+    {
+      "case": "C2",
+      "phase": "mitigation",
+      "mitigator": "graph",
+      "trial": 1,
+      "seed": 20100,
+      "warmup": 135.0,
+      "label": "mitigation-C2-graph"
+    },
+    {
+      "case": "C2",
+      "phase": "mitigation",
+      "mitigator": "graph",
+      "trial": 2,
+      "seed": 20200,
+      "warmup": 135.0,
+      "label": "mitigation-C2-graph"
+    },
+    {
+      "case": "C2",
+      "phase": "mitigation",
+      "mitigator": "graph",
+      "trial": 3,
+      "seed": 20300,
+      "warmup": 135.0,
+      "label": "mitigation-C2-graph"
+    },
+    {
+      "case": "C2",
+      "phase": "mitigation",
+      "mitigator": "graph",
+      "trial": 4,
+      "seed": 20400,
+      "warmup": 135.0,
+      "label": "mitigation-C2-graph"
+    },
+    {
+      "case": "C2",
+      "phase": "mitigation",
+      "mitigator": "graph",
+      "trial": 5,
+      "seed": 20500,
+      "warmup": 135.0,
+      "label": "mitigation-C2-graph"
+    },
+    {
+      "case": "C3",
+      "phase": "mitigation",
+      "mitigator": "baseline",
+      "trial": 1,
+      "seed": 20100,
+      "warmup": 135.0,
+      "label": "mitigation-C3-baseline"
+    },
+    {
+      "case": "C3",
+      "phase": "mitigation",
+      "mitigator": "baseline",
+      "trial": 2,
+      "seed": 20200,
+      "warmup": 135.0,
+      "label": "mitigation-C3-baseline"
+    },
+    {
+      "case": "C3",
+      "phase": "mitigation",
+      "mitigator": "baseline",
+      "trial": 3,
+      "seed": 20300,
+      "warmup": 135.0,
+      "label": "mitigation-C3-baseline"
+    },
+    {
+      "case": "C3",
+      "phase": "mitigation",
+      "mitigator": "baseline",
+      "trial": 4,
+      "seed": 20400,
+      "warmup": 135.0,
+      "label": "mitigation-C3-baseline"
+    },
+    {
+      "case": "C3",
+      "phase": "mitigation",
+      "mitigator": "baseline",
+      "trial": 5,
+      "seed": 20500,
+      "warmup": 135.0,
+      "label": "mitigation-C3-baseline"
+    },
+    {
+      "case": "C3",
+      "phase": "mitigation",
+      "mitigator": "graph",
+      "trial": 1,
+      "seed": 20100,
+      "warmup": 135.0,
+      "label": "mitigation-C3-graph"
+    },
+    {
+      "case": "C3",
+      "phase": "mitigation",
+      "mitigator": "graph",
+      "trial": 2,
+      "seed": 20200,
+      "warmup": 135.0,
+      "label": "mitigation-C3-graph"
+    },
+    {
+      "case": "C3",
+      "phase": "mitigation",
+      "mitigator": "graph",
+      "trial": 3,
+      "seed": 20300,
+      "warmup": 135.0,
+      "label": "mitigation-C3-graph"
+    },
+    {
+      "case": "C3",
+      "phase": "mitigation",
+      "mitigator": "graph",
+      "trial": 4,
+      "seed": 20400,
+      "warmup": 135.0,
+      "label": "mitigation-C3-graph"
+    },
+    {
+      "case": "C3",
+      "phase": "mitigation",
+      "mitigator": "graph",
+      "trial": 5,
+      "seed": 20500,
+      "warmup": 135.0,
+      "label": "mitigation-C3-graph"
+    },
+    {
+      "case": "C4",
+      "phase": "mitigation",
+      "mitigator": "baseline",
+      "trial": 1,
+      "seed": 20100,
+      "warmup": 135.0,
+      "label": "mitigation-C4-baseline"
+    },
+    {
+      "case": "C4",
+      "phase": "mitigation",
+      "mitigator": "baseline",
+      "trial": 2,
+      "seed": 20200,
+      "warmup": 135.0,
+      "label": "mitigation-C4-baseline"
+    },
+    {
+      "case": "C4",
+      "phase": "mitigation",
+      "mitigator": "baseline",
+      "trial": 3,
+      "seed": 20300,
+      "warmup": 135.0,
+      "label": "mitigation-C4-baseline"
+    },
+    {
+      "case": "C4",
+      "phase": "mitigation",
+      "mitigator": "baseline",
+      "trial": 4,
+      "seed": 20400,
+      "warmup": 135.0,
+      "label": "mitigation-C4-baseline"
+    },
+    {
+      "case": "C4",
+      "phase": "mitigation",
+      "mitigator": "baseline",
+      "trial": 5,
+      "seed": 20500,
+      "warmup": 135.0,
+      "label": "mitigation-C4-baseline"
+    },
+    {
+      "case": "C4",
+      "phase": "mitigation",
+      "mitigator": "graph",
+      "trial": 1,
+      "seed": 20100,
+      "warmup": 135.0,
+      "label": "mitigation-C4-graph"
+    },
+    {
+      "case": "C4",
+      "phase": "mitigation",
+      "mitigator": "graph",
+      "trial": 2,
+      "seed": 20200,
+      "warmup": 135.0,
+      "label": "mitigation-C4-graph"
+    },
+    {
+      "case": "C4",
+      "phase": "mitigation",
+      "mitigator": "graph",
+      "trial": 3,
+      "seed": 20300,
+      "warmup": 135.0,
+      "label": "mitigation-C4-graph"
+    },
+    {
+      "case": "C4",
+      "phase": "mitigation",
+      "mitigator": "graph",
+      "trial": 4,
+      "seed": 20400,
+      "warmup": 135.0,
+      "label": "mitigation-C4-graph"
+    },
+    {
+      "case": "C4",
+      "phase": "mitigation",
+      "mitigator": "graph",
+      "trial": 5,
+      "seed": 20500,
+      "warmup": 135.0,
+      "label": "mitigation-C4-graph"
+    },
+    {
+      "case": "C5",
+      "phase": "mitigation",
+      "mitigator": "baseline",
+      "trial": 1,
+      "seed": 20100,
+      "warmup": 135.0,
+      "label": "mitigation-C5-baseline"
+    },
+    {
+      "case": "C5",
+      "phase": "mitigation",
+      "mitigator": "baseline",
+      "trial": 2,
+      "seed": 20200,
+      "warmup": 135.0,
+      "label": "mitigation-C5-baseline"
+    },
+    {
+      "case": "C5",
+      "phase": "mitigation",
+      "mitigator": "baseline",
+      "trial": 3,
+      "seed": 20300,
+      "warmup": 135.0,
+      "label": "mitigation-C5-baseline"
+    },
+    {
+      "case": "C5",
+      "phase": "mitigation",
+      "mitigator": "baseline",
+      "trial": 4,
+      "seed": 20400,
+      "warmup": 135.0,
+      "label": "mitigation-C5-baseline"
+    },
+    {
+      "case": "C5",
+      "phase": "mitigation",
+      "mitigator": "baseline",
+      "trial": 5,
+      "seed": 20500,
+      "warmup": 135.0,
+      "label": "mitigation-C5-baseline"
+    },
+    {
+      "case": "C5",
+      "phase": "mitigation",
+      "mitigator": "graph",
+      "trial": 1,
+      "seed": 20100,
+      "warmup": 135.0,
+      "label": "mitigation-C5-graph"
+    },
+    {
+      "case": "C5",
+      "phase": "mitigation",
+      "mitigator": "graph",
+      "trial": 2,
+      "seed": 20200,
+      "warmup": 135.0,
+      "label": "mitigation-C5-graph"
+    },
+    {
+      "case": "C5",
+      "phase": "mitigation",
+      "mitigator": "graph",
+      "trial": 3,
+      "seed": 20300,
+      "warmup": 135.0,
+      "label": "mitigation-C5-graph"
+    },
+    {
+      "case": "C5",
+      "phase": "mitigation",
+      "mitigator": "graph",
+      "trial": 4,
+      "seed": 20400,
+      "warmup": 135.0,
+      "label": "mitigation-C5-graph"
+    },
+    {
+      "case": "C5",
+      "phase": "mitigation",
+      "mitigator": "graph",
+      "trial": 5,
+      "seed": 20500,
+      "warmup": 135.0,
+      "label": "mitigation-C5-graph"
+    },
+    {
+      "case": "C6",
+      "phase": "mitigation",
+      "mitigator": "baseline",
+      "trial": 1,
+      "seed": 20100,
+      "warmup": 135.0,
+      "label": "mitigation-C6-baseline"
+    },
+    {
+      "case": "C6",
+      "phase": "mitigation",
+      "mitigator": "baseline",
+      "trial": 2,
+      "seed": 20200,
+      "warmup": 135.0,
+      "label": "mitigation-C6-baseline"
+    },
+    {
+      "case": "C6",
+      "phase": "mitigation",
+      "mitigator": "baseline",
+      "trial": 3,
+      "seed": 20300,
+      "warmup": 135.0,
+      "label": "mitigation-C6-baseline"
+    },
+    {
+      "case": "C6",
+      "phase": "mitigation",
+      "mitigator": "baseline",
+      "trial": 4,
+      "seed": 20400,
+      "warmup": 135.0,
+      "label": "mitigation-C6-baseline"
+    },
+    {
+      "case": "C6",
+      "phase": "mitigation",
+      "mitigator": "baseline",
+      "trial": 5,
+      "seed": 20500,
+      "warmup": 135.0,
+      "label": "mitigation-C6-baseline"
+    },
+    {
+      "case": "C6",
+      "phase": "mitigation",
+      "mitigator": "graph",
+      "trial": 1,
+      "seed": 20100,
+      "warmup": 135.0,
+      "label": "mitigation-C6-graph"
+    },
+    {
+      "case": "C6",
+      "phase": "mitigation",
+      "mitigator": "graph",
+      "trial": 2,
+      "seed": 20200,
+      "warmup": 135.0,
+      "label": "mitigation-C6-graph"
+    },
+    {
+      "case": "C6",
+      "phase": "mitigation",
+      "mitigator": "graph",
+      "trial": 3,
+      "seed": 20300,
+      "warmup": 135.0,
+      "label": "mitigation-C6-graph"
+    },
+    {
+      "case": "C6",
+      "phase": "mitigation",
+      "mitigator": "graph",
+      "trial": 4,
+      "seed": 20400,
+      "warmup": 135.0,
+      "label": "mitigation-C6-graph"
+    },
+    {
+      "case": "C6",
+      "phase": "mitigation",
+      "mitigator": "graph",
+      "trial": 5,
+      "seed": 20500,
+      "warmup": 135.0,
+      "label": "mitigation-C6-graph"
+    },
+    {
+      "case": "C1",
+      "phase": "benign",
+      "mitigator": "none",
+      "trial": 1,
+      "seed": 20100,
+      "warmup": 135.0,
+      "label": "benign-C1-none",
+      "benign": true
+    },
+    {
+      "case": "C1",
+      "phase": "benign",
+      "mitigator": "none",
+      "trial": 2,
+      "seed": 20200,
+      "warmup": 135.0,
+      "label": "benign-C1-none",
+      "benign": true
+    },
+    {
+      "case": "C1",
+      "phase": "benign",
+      "mitigator": "none",
+      "trial": 3,
+      "seed": 20300,
+      "warmup": 135.0,
+      "label": "benign-C1-none",
+      "benign": true
+    },
+    {
+      "case": "C1",
+      "phase": "benign",
+      "mitigator": "none",
+      "trial": 4,
+      "seed": 20400,
+      "warmup": 135.0,
+      "label": "benign-C1-none",
+      "benign": true
+    },
+    {
+      "case": "C1",
+      "phase": "benign",
+      "mitigator": "none",
+      "trial": 5,
+      "seed": 20500,
+      "warmup": 135.0,
+      "label": "benign-C1-none",
+      "benign": true
+    },
+    {
+      "case": "C7",
+      "phase": "order",
+      "mitigator": "none",
+      "trial": 1,
+      "seed": 20100,
+      "warmup": 135.0,
+      "label": "order-C7-none",
+      "reverse": true
+    },
+    {
+      "case": "C7",
+      "phase": "order",
+      "mitigator": "none",
+      "trial": 2,
+      "seed": 20200,
+      "warmup": 135.0,
+      "label": "order-C7-none",
+      "reverse": true
+    },
+    {
+      "case": "C7",
+      "phase": "order",
+      "mitigator": "none",
+      "trial": 3,
+      "seed": 20300,
+      "warmup": 135.0,
+      "label": "order-C7-none",
+      "reverse": true
+    },
+    {
+      "case": "C7",
+      "phase": "order",
+      "mitigator": "none",
+      "trial": 4,
+      "seed": 20400,
+      "warmup": 135.0,
+      "label": "order-C7-none",
+      "reverse": true
+    },
+    {
+      "case": "C7",
+      "phase": "order",
+      "mitigator": "none",
+      "trial": 5,
+      "seed": 20500,
+      "warmup": 135.0,
+      "label": "order-C7-none",
+      "reverse": true
+    }
+  ],
+  "calibration_seeds": [
+    11001,
+    11002,
+    11003
+  ],
+  "note": "95 evaluation runs; the requested matrix arithmetic was corrected from 105.",
+  "configuration": {
+    "SUBNET": "10.0.0.0/24",
+    "HOSTS": {
+      "h1": [
+        "10.0.0.1",
+        "00:00:00:00:00:01",
+        "s1",
+        "workstation"
+      ],
+      "h2": [
+        "10.0.0.2",
+        "00:00:00:00:00:02",
+        "s1",
+        "workstation"
+      ],
+      "h3": [
+        "10.0.0.3",
+        "00:00:00:00:00:03",
+        "s1",
+        "workstation"
+      ],
+      "h4": [
+        "10.0.0.4",
+        "00:00:00:00:00:04",
+        "s2",
+        "attacker"
+      ],
+      "h5": [
+        "10.0.0.5",
+        "00:00:00:00:00:05",
+        "s2",
+        "auth_server"
+      ],
+      "server": [
+        "10.0.0.10",
+        "00:00:00:00:00:10",
+        "s2",
+        "app_server"
+      ]
+    },
+    "SWITCHES": [
+      "s1",
+      "s2"
+    ],
+    "SWITCH_LINKS": [
+      [
+        "s1",
+        "s2"
+      ]
+    ],
+    "ATTACKER": "h4",
+    "AUTH_SERVER": "h5",
+    "APP_SERVER": "server",
+    "WORKSTATIONS": [
+      "h1",
+      "h2",
+      "h3"
+    ],
+    "IP_TO_HOST": {
+      "10.0.0.1": "h1",
+      "10.0.0.2": "h2",
+      "10.0.0.3": "h3",
+      "10.0.0.4": "h4",
+      "10.0.0.5": "h5",
+      "10.0.0.10": "server"
+    },
+    "HOST_TO_IP": {
+      "h1": "10.0.0.1",
+      "h2": "10.0.0.2",
+      "h3": "10.0.0.3",
+      "h4": "10.0.0.4",
+      "h5": "10.0.0.5",
+      "server": "10.0.0.10"
+    },
+    "CONTROLLER_IP": "127.0.0.1",
+    "CONTROLLER_PORT": 6653,
+    "WINDOW_SECONDS": 10.0,
+    "POLL_INTERVAL_SECONDS": 5.0,
+    "AUTH_PORTS": [
+      21,
+      22,
+      23,
+      3389,
+      5900
+    ],
+    "PORTSCAN_PORTS": 15,
+    "PORTSCAN_HOSTS": 4,
+    "DOS_PPS": 500.0,
+    "DOS_SUSTAINED_WINDOWS": 2,
+    "BRUTEFORCE_ATTEMPTS": 20,
+    "PROFILE_WARMUP_WINDOWS": 12,
+    "MIN_PROFILE_WINDOWS": 6,
+    "PROFILE_ALPHA": 0.2,
+    "MIN_SIGMA_DEFAULT": 0.5,
+    "MIN_SIGMA_BY_FEATURE": {
+      "degree": 0.5,
+      "weighted_degree": 5.0,
+      "new_neighbour_ratio": 0.1,
+      "port_diversity": 0.5,
+      "betweenness": 0.05
+    },
+    "Z_CLAMP": 6.0,
+    "GRAPH_WEIGHTS": {
+      "degree": 1.0,
+      "weighted_degree": 0.3,
+      "new_neighbour_ratio": 2.0,
+      "port_diversity": 1.0,
+      "betweenness": 0.5,
+      "community_change": 1.0
+    },
+    "GRAPH_SCORE_THRESHOLD": 6.0,
+    "ALERT_COOLDOWN_SECONDS": 30.0,
+    "MITIGATION_PRIORITY": 100,
+    "LEARNING_SWITCH_PRIORITY": 1,
+    "MITIGATION_IDLE_TIMEOUT": 30,
+    "MITIGATION_HARD_TIMEOUT": 0,
+    "MITIGATOR_MODES": [
+      "baseline",
+      "graph",
+      "both",
+      "none"
+    ],
+    "DEFAULT_MITIGATOR": "none",
+    "RESOURCE_SAMPLE_INTERVAL": 1.0,
+    "RESULTS_RAW_DIR": "results/raw",
+    "RESULTS_TABLES_DIR": "results/tables",
+    "RESULTS_FIGS_DIR": "results/figs"
+  }
+}

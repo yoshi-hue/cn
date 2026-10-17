@@ -1,0 +1,27 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+
+# Experiment output. Raw logs are large and regenerable; keep the derived
+# tables and figures out of git too so the repo does not accumulate one copy
+# per sweep. Commit a specific results set deliberately with `git add -f` if a
+# run needs to be preserved alongside the report.
+results/raw/
+results/tables/
+results/figs/
+!results/.gitkeep
+
+# Local tools, scratch output, and uncurated campaigns.
+.DS_Store
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+*.pcap
+*.pcapng
+results/campaigns/
+results/analysis/
+output/
+tmp/

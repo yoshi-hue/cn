@@ -1,0 +1,1 @@
+{"schema_version": 2, "attack_id": "f15ad3588fac42548dc86e46f3f64765", "first_send": 1790031014.7572916, "last_send": 1790031022.2485878, "sent": 60, "attack_class": "bruteforce", "src": "10.0.0.4", "targets": ["10.0.0.5"], "t_start": 1790031014.7571878, "t_end": 1790031022.3315377, "note": "60 SYN connection attempts", "aborted": false}

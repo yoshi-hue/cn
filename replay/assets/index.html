@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SDN IDS · Experiment replay</title>
+  <link rel="stylesheet" href="style.css"><link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <header class="top">
+    <nav class="views" aria-label="Views"><a href="#replay" id="tab-replay" class="active">Guided replay</a><a href="#results" id="tab-results">Results</a></nav>
+    <span class="top-note">Recorded observations, not a live simulation</span>
+  </header>
+  <main>
+    <div id="error" role="alert" hidden></div>
+
+    <section id="view-results" hidden aria-labelledby="results-title">
+      <div class="story">
+        <header class="verdict"><p class="kicker">Results · 95 trials</p><h1 id="results-title">The graph detector recognised and stopped lateral movement that the baseline misread. The baseline covered more kinds of attack.</h1><p class="lede">Their strengths differ across these simulated workloads.</p><p class="key"><span><i class="sw-base"></i>Threshold baseline</span><span><i class="sw-graph"></i>Graph detector</span></p></header>
+        <article class="q" id="q-detect"></article>
+        <article class="q" id="q-false"></article>
+        <article class="q" id="q-block"></article>
+        <article class="q" id="q-users"></article>
+        <article class="q" id="q-cost"></article>
+        <details class="more"><summary>How the numbers are defined</summary><dl id="definitions"></dl></details>
+        <details class="more"><summary>Review 1 objectives: planned → delivered</summary><ol id="objectives" class="objectives"></ol></details>
+      </div>
+    </section>
+
+    <section id="view-replay" aria-label="Guided replay">
+      <nav id="chapters" class="chapters" aria-label="Guided chapters"></nav>
+      <section id="brief" class="brief" aria-live="polite"></section>
+      <details class="trial-browser"><summary>Browse all trials <span id="inventory"></span></summary><section class="browser" aria-label="Trial browser"><label>Phase<select id="phase"></select></label><label>Case<select id="case"></select></label><label>Actuator<select id="mitigator"></select></label><label>Trial<select id="trial"></select></label></section></details>
+      <section class="runbar"><div><h2 id="run-title">Loading verified evidence…</h2><p id="run-subtitle"></p></div><span id="phase-badge" class="pill"></span></section>
+      <ol id="pipeline" class="pipeline" aria-label="Detection and mitigation pipeline at this position"></ol>
+      <section class="workspace">
+        <article class="card network"><div class="card-head"><h2>Network</h2><span id="period" class="pill">Warmup</span></div><svg id="network" viewBox="0 0 780 330" role="img" aria-label="Six hosts and two switches with recorded communication observations"></svg><div class="legend"><span><i class="k-link"></i>Physical link</span><span><i class="k-http"></i>HTTP probe</span><span><i class="k-recv"></i>Attack packets counted at receiver</span><span><i class="k-target"></i>Declared attack target</span><span><i class="k-rule"></i>Drop rule on switch</span></div><p id="annotation" class="annotation"></p></article>
+        <aside class="detectors"><article class="card detector" id="baseline"></article><article class="card detector" id="graph"></article></aside>
+      </section>
+      <section class="card controls" aria-label="Playback controls">
+        <div class="control-row"><button id="play" class="primary" aria-label="Play replay">▶ Play</button><button id="previous" title="Previous event (Left arrow)">← Event</button><button id="next" title="Next event (Right arrow)">Event →</button><button id="restart" title="Restart (Home)">↺</button><label class="switch"><input type="checkbox" id="focus" checked> Focus on attack</label><label>Speed<select id="speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="5">5×</option></select></label><span id="clock" class="clock">0.0 s</span></div>
+        <label class="sr-only" for="scrubber">Replay position in seconds since recorded run start</label><input id="scrubber" type="range" min="0" max="1" step="any" value="0">
+        <svg id="timeline" viewBox="0 0 1000 46" role="img" aria-label="Attack intervals and alert milestones"></svg>
+        <div id="explanation" class="explanation" aria-live="polite"></div>
+        <p class="shortcut">Space play/pause · ← → step through events · Home restart · Focus limits the timeline to the attack and its response.</p>
+      </section>
+      <section class="grid-2">
+        <article class="card"><div class="card-head"><h2>Attack packets reaching receivers</h2><span class="eyebrow">Cumulative · sampled</span></div><svg id="receiver-chart" viewBox="0 0 650 180" role="img" aria-label="Cumulative marked attack packets observed by receivers"></svg><div id="receiver-legend" class="chart-legend"></div><p class="small">Attack packets from h4 counted at each target. A line that rises after the drop rule is confirmed means attack packets got through. Receivers pass a capture health check before each run. Runs from the historical campaign have no usable counts.</p></article>
+        <article class="card"><div class="card-head"><h2>Legitimate HTTP delivery</h2><span class="eyebrow">Per request</span></div><svg id="http-chart" viewBox="0 0 650 180" role="img" aria-label="HTTP request success, failure, and latency by client group"></svg><div id="http-counts" class="chart-legend"></div><p class="small">Filled circles are innocent clients and outlined circles are the attack source; height shows latency. Crosses along the top are failed requests.</p></article>
+      </section>
+      <details class="inspection"><summary>Trial results &amp; event log <span>Published outcomes and recorded milestones</span></summary><section class="grid-2"><article class="card"><div class="card-head"><h2>Event trail</h2><span class="eyebrow">At this position · click for raw record</span></div><div id="events" class="event-list"></div></article><article class="card"><div class="card-head"><h2>Published trial results</h2><span class="eyebrow">Complete run</span></div><div id="trial-results"></div><p class="small">These results cover the complete selected run. They are not predictions at the current playback position.</p></article></section></details>
+      <details class="card evidence"><summary>Inspect evidence, timestamps &amp; observation limits</summary><p>Actual alert creation and decision times are used when present; other points use recorded event times. Complete switch confirmation is derived only from the same actuating decision's targeted switch set. Blocking verification is a published retrospective assessment, distinct from rule confirmation.</p><p>Detector windows contain aggregate statistics, not a full historical graph. No edges, packet trajectories, send-rate curves, or recovery outcomes are invented. Rule-expiry notifications and sampled switch occupancy may disagree; both are displayed.</p><div id="switches" class="switches"></div><div id="evidence-links"></div><details><summary>Selected event record</summary><pre id="raw-event">Select an event in the trail.</pre></details><p id="unavailable"></p></details>
+    </section>
+    <footer>Six-host SDN testbed · threshold baseline vs graph detector <span>Playback of recorded evidence · no external requests</span></footer>
+  </main>
+</body>
+</html>

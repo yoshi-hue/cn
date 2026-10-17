@@ -1,0 +1,1640 @@
+{
+  "rule": "ceil(1.25 * maximum normal-only value + 1)",
+  "maxima": {
+    "PORTSCAN_PORTS": 4,
+    "PORTSCAN_HOSTS": 2,
+    "DOS_PPS": 15.5,
+    "BRUTEFORCE_ATTEMPTS": 0.0,
+    "GRAPH_SCORE_THRESHOLD": 3.731
+  },
+  "thresholds": {
+    "PORTSCAN_PORTS": 6,
+    "PORTSCAN_HOSTS": 4,
+    "DOS_PPS": 21,
+    "BRUTEFORCE_ATTEMPTS": 1,
+    "GRAPH_SCORE_THRESHOLD": 6
+  },
+  "observations": [
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 14,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.5,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.911
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 15,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.1,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.051
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 16,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.3,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.991
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 17,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 9.0,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.523
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 18,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.2,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.785
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 19,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 12.2,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.142
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 20,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 9.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.922
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 21,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 12.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.943
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 22,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.2,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.662
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 23,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 9.6,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.113
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 24,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.7,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.342
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 25,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.0,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.869
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 26,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.6,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.57
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 27,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 12.7,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.426
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 28,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 9.5,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.496
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 29,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.2,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.919
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 30,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 9.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.735
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 31,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 12.6,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.776
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 32,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.3,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.126
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 33,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.2,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.877
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 34,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.137
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 35,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.2,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.961
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 36,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 9.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.769
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 37,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.1,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.499
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 38,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.0,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.892
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 39,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 9.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.714
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 40,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.2,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.646
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 41,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.6,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.884
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 42,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.09
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 43,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 3.731
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 44,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 12.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 3.02
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 45,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 12.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 2.248
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 46,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.7,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.304
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 47,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.9,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.02
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 48,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.2,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.751
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 49,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.856
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 50,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.5,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.443
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 51,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.364
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 52,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.2,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.565
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 53,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.2,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.475
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 54,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 12.9,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.218
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 55,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.6,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.23
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 56,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.0,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.751
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 57,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.2,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.378
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 58,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 15.3,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.685
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 59,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 15.5,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.509
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 60,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.0,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.194
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 61,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.6,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.671
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 62,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.2,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.479
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 63,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 15.2,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.755
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 64,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.7,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.386
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 65,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.9,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.575
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 66,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.52
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 67,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.0,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.644
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 68,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.2,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.876
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 69,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 12.3,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.599
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 70,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.594
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 71,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.618
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 72,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 12.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.848
+    },
+    {
+      "run": "calibration-C1-none_trial01",
+      "window": 73,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.431
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 14,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.858
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 15,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.686
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 16,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 12.0,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.71
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 17,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.772
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 18,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.052
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 19,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.982
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 20,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.2,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.719
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 21,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.3,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.943
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 22,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.0,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.876
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 23,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.6,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.004
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 24,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.826
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 25,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.2,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.941
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 26,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.405
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 27,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.002
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 28,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.0,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.779
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 29,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.2,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.519
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 30,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 9.9,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.415
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 31,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.851
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 32,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.597
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 33,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.6,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.382
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 34,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.957
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 35,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.1,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.095
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 36,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.2,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.085
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 37,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.6,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.468
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 38,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.3,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.085
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 39,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.2,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.918
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 40,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.0,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.856
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 41,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.7,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.815
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 42,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.522
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 43,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.498
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 44,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.2,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.734
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 45,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.2,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.942
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 46,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.388
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 47,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.717
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 48,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 12.7,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.031
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 49,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.0,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.585
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 50,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.1,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.652
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 51,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 15.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.442
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 52,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.7,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.357
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 53,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.6,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.315
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 54,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.0,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.3
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 55,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.3,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.334
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 56,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 12.9,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.312
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 57,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.2,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.361
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 58,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.657
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 59,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.196
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 60,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 15.1,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.251
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 61,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.6,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.934
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 62,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.9,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.589
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 63,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.151
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 64,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.9,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.617
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 65,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 12.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.24
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 66,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.257
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 67,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.062
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 68,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.935
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 69,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 12.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.405
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 70,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.3,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.413
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 71,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.5,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.619
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 72,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.6,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.277
+    },
+    {
+      "run": "calibration-C1-none_trial02",
+      "window": 73,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.9,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.378
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 14,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.0,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.606
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 15,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.2,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.19
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 16,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.798
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 17,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.6,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.002
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 18,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.7,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.341
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 19,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.748
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 20,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.9,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.919
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 21,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.0,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.587
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 22,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.6,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.468
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 23,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.2,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.857
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 24,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.0,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.855
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 25,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.826
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 26,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.951
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 27,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.1,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.6
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 28,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.6,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.711
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 29,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.3,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.524
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 30,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.6,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.419
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 31,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 12.0,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.225
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 32,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.7,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.1
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 33,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.7,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.894
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 34,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.1,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.762
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 35,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 9.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.088
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 36,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.6,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.897
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 37,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.64
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 38,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 11.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.898
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 39,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 9.7,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.718
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 40,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.574
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 41,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 12.0,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.078
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 42,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.774
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 43,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 10.6,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.881
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 44,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.0,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.792
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 45,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.0,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.623
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 46,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.0,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.963
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 47,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.9,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.63
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 48,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 12.6,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.708
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 49,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.632
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 50,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.2,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.483
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 51,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 15.0,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.745
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 52,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.851
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 53,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.429
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 54,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.0,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.479
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 55,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.1,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.507
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 56,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.0,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.434
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 57,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.332
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 58,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.2,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.253
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 59,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 15.1,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.695
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 60,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.7,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.389
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 61,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.1,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.026
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 62,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 12.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.593
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 63,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.59
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 64,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.2,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.26
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 65,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.1,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.387
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 66,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.59
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 67,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.0,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.874
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 68,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.4
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 69,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 13.1,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.32
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 70,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 12.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.783
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 71,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.4,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 1.182
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 72,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 12.8,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.204
+    },
+    {
+      "run": "calibration-C1-none_trial03",
+      "window": 73,
+      "PORTSCAN_PORTS": 4,
+      "PORTSCAN_HOSTS": 2,
+      "DOS_PPS": 14.6,
+      "BRUTEFORCE_ATTEMPTS": 0,
+      "GRAPH_SCORE_THRESHOLD": 0.378
+    }
+  ],
+  "frozen_design": "weights, variance floors, warmup and online profile policy unchanged"
+}

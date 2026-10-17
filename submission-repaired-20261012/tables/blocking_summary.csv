@@ -1,0 +1,11 @@
+mitigator,attack_class,records,testable,verified,observed_leakage,no_confirmation,insufficient_post_confirmation_traffic,unavailable_receiver_evidence,insufficient_drop_evidence
+baseline,all,30,25,15,10,5,0,0,0
+baseline,bruteforce,5,5,5,0,0,0,0,0
+baseline,dos,5,5,5,0,0,0,0,0
+baseline,lateral,10,10,0,10,0,0,0,0
+baseline,portscan,10,5,5,0,5,0,0,0
+graph,all,30,10,9,0,20,0,0,1
+graph,bruteforce,5,0,0,0,5,0,0,0
+graph,dos,5,0,0,0,5,0,0,0
+graph,lateral,10,10,9,0,0,0,0,1
+graph,portscan,10,0,0,0,10,0,0,0

@@ -1,0 +1,1 @@
+{"schema_version": 2, "attack_id": "b72c3f3df0544d79b8c42c27d2281d1a", "first_send": 1790027930.560614, "last_send": 1790027938.3403738, "sent": 83, "attack_class": "portscan", "src": "10.0.0.4", "targets": ["10.0.0.10"], "t_start": 1790027930.5605094, "t_end": 1790027938.3865912, "note": "TCP SYN sweep across 83 ports", "aborted": false}

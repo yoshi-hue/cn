@@ -1,0 +1,18 @@
+# Ryu 4.34 is the last release; it is unmaintained, so every transitive
+# dependency that has since broken compatibility is pinned explicitly here.
+ryu==4.34
+eventlet==0.30.2
+dnspython==1.16.0
+msgpack==1.0.5
+oslo.config==8.8.0
+webob==1.8.7
+routes==2.5.1
+tinyrpc==1.0.4
+
+# Pure-Python, so these install from source without trouble on any arch.
+networkx==2.6.3
+scapy==2.5.0
+pytest==7.4.4
+
+# numpy, pandas, matplotlib and psutil come from apt (see Dockerfile) because
+# PyPI has no Python 3.8 aarch64 wheels for them.

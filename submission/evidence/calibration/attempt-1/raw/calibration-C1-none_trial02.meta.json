@@ -1,0 +1,15 @@
+{
+  "case": "C1",
+  "trial": 2,
+  "mitigator": "none",
+  "seed": 11002,
+  "phase": "calibration",
+  "reverse": false,
+  "benign": false,
+  "warmup": 135.0,
+  "observation": 600.0,
+  "started_wall": 1790017456.9834259,
+  "evaluation_start": 1790017598.608115,
+  "recovery_start": 1790018198.6243975,
+  "ended_wall": 1790018246.1032245
+}

@@ -1,0 +1,15 @@
+{
+  "case": "C4",
+  "trial": 5,
+  "mitigator": "graph",
+  "seed": 20500,
+  "phase": "mitigation",
+  "reverse": false,
+  "benign": false,
+  "warmup": 135.0,
+  "observation": 60,
+  "started_wall": 1790032445.366305,
+  "evaluation_start": 1790032586.7968578,
+  "recovery_start": 1790032594.8821907,
+  "ended_wall": 1790032641.5887344
+}

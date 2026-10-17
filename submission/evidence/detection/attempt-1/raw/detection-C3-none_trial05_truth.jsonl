@@ -1,0 +1,1 @@
+{"schema_version": 2, "attack_id": "4f81e2aa4d404ee4a7b89dcf24112392", "first_send": 1790022241.1802795, "last_send": 1790022261.169026, "sent": 29700, "attack_class": "dos", "src": "10.0.0.4", "targets": ["10.0.0.10"], "t_start": 1790022241.174673, "t_end": 1790022261.202866, "note": "TCP SYN flood at ~1500 pps", "aborted": false}

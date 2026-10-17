@@ -1,0 +1,16 @@
+{
+  "case": "C7",
+  "trial": 3,
+  "mitigator": "none",
+  "seed": 20300,
+  "phase": "detection",
+  "measurement_protocol_version": 2,
+  "reverse": false,
+  "benign": false,
+  "warmup": 135.0,
+  "observation": 60,
+  "started_wall": 1791758186.509246,
+  "evaluation_start": 1791758332.1922414,
+  "recovery_start": 1791758437.4243965,
+  "ended_wall": 1791758484.4798958
+}
