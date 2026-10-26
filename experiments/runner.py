@@ -47,13 +47,20 @@ class Controller:
     cost, not the cost of the detector plus Mininet plus the harness.
     """
 
-    def __init__(self, case, trial, mitigator, log_path, port=None, quiet=False):
+    def __init__(self, case, trial, mitigator, log_path, port=None, quiet=False,
+                 detector_mode="both", topology_size=None, window_seconds=None,
+                 profile_alpha=None, cumulative_lateral=False):
         self.case = case
         self.trial = trial
         self.mitigator = mitigator
         self.log_path = log_path
         self.port = port or config.CONTROLLER_PORT
         self.quiet = quiet
+        self.detector_mode = detector_mode
+        self.topology_size = topology_size
+        self.window_seconds = window_seconds
+        self.profile_alpha = profile_alpha
+        self.cumulative_lateral = cumulative_lateral
         self.process = None
         self.stdout_path = log_path.replace(".jsonl", ".ryu.log")
 
@@ -72,7 +79,16 @@ class Controller:
             LANTERN_MITIGATOR=self.mitigator,
             LANTERN_CASE=self.case,
             LANTERN_TRIAL=str(self.trial),
+            LANTERN_DETECTOR_MODE=self.detector_mode,
         )
+        if self.topology_size:
+            environment["LANTERN_TOPOLOGY_SIZE"] = str(self.topology_size)
+        if self.window_seconds:
+            environment["LANTERN_WINDOW_SECONDS"] = str(self.window_seconds)
+        if self.profile_alpha:
+            environment["LANTERN_PROFILE_ALPHA"] = str(self.profile_alpha)
+        if self.cumulative_lateral:
+            environment["LANTERN_CUMULATIVE_LATERAL"] = "1"
         # Re-created immediately before use rather than only at the top of
         # this method: the repository is a bind mount, and the host deleting
         # or recreating results/raw can leave the container's view of the

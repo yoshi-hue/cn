@@ -37,6 +37,7 @@ ATTACK_CLASSES = (
 # can score the two detectors separately on identical traffic.
 DETECTOR_BASELINE = "baseline"
 DETECTOR_GRAPH = "graph"
+DETECTOR_HYBRID = "hybrid"
 
 SEVERITY_LOW = "low"
 SEVERITY_MEDIUM = "medium"

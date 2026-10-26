@@ -10,6 +10,7 @@ from lantern import config
 from lantern.alerts import (
     CLASS_BRUTEFORCE,
     CLASS_DOS,
+    CLASS_LATERAL,
     CLASS_PORTSCAN,
     DETECTOR_BASELINE,
     SEVERITY_HIGH,
@@ -29,6 +30,11 @@ class BaselineDetector:
         # single burst is not a denial of service; persistence is what
         # distinguishes one from a legitimate transfer.
         self._dos_streak = {}
+        # Source -> cumulative set of destinations first contacted during the
+        # run. This is the requested control baseline: unlike the graph model
+        # it has no topology or learned profile, only a cumulative count.
+        self._seen_destinations = {}
+        self._lateral_reported = set()
         self.last_compute_seconds = 0.0
 
     def detect(self, window):
@@ -39,8 +45,49 @@ class BaselineDetector:
         alerts.extend(self._detect_portscan(window))
         alerts.extend(self._detect_dos(window))
         alerts.extend(self._detect_bruteforce(window))
+        if self.cfg.CUMULATIVE_LATERAL_ENABLED:
+            alerts.extend(self._detect_cumulative_lateral(window))
 
         self.last_compute_seconds = time.perf_counter() - started
+        return alerts
+
+    def _detect_cumulative_lateral(self, window):
+        """Control rule: label a source after N distinct new destinations.
+
+        Destinations are added only after scoring the current window. The
+        first crossing emits one alert per source, making the rule cumulative
+        across windows while keeping alert counts comparable with the graph
+        detector's cooldown semantics.
+        """
+        alerts = []
+        for host in window.hosts.values():
+            seen = self._seen_destinations.setdefault(host.host, set())
+            new = set(host.initiated_hosts) - seen
+            cumulative = seen | new
+            if (
+                len(cumulative) >= self.cfg.CUMULATIVE_NEW_DESTINATIONS
+                and host.host not in self._lateral_reported
+            ):
+                alerts.append(
+                    Alert(
+                        detector=self.name,
+                        attack_class=CLASS_LATERAL,
+                        src_ip=host.host,
+                        ts=window.end,
+                        window_index=window.index,
+                        severity=SEVERITY_HIGH,
+                        score=float(len(cumulative)),
+                        reason="%d cumulative distinct new destinations (>= %d)"
+                        % (len(cumulative), self.cfg.CUMULATIVE_NEW_DESTINATIONS),
+                        evidence={
+                            "new_destinations": sorted(new),
+                            "cumulative_distinct_destinations": len(cumulative),
+                            "threshold": self.cfg.CUMULATIVE_NEW_DESTINATIONS,
+                        },
+                    )
+                )
+                self._lateral_reported.add(host.host)
+            seen.update(new)
         return alerts
 
     # ------------------------------------------------------------------

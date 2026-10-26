@@ -123,13 +123,16 @@ class AlertManager:
         cutting the source off from services it may legitimately be using --
         which is what the legitimate-traffic disruption metric measures.
         """
-        if alert.attack_class in (CLASS_PORTSCAN, CLASS_LATERAL):
+        policy_action = self.cfg.MITIGATION_POLICY.get(alert.attack_class)
+        if policy_action == ACTION_LOG_ONLY:
+            return ACTION_LOG_ONLY, "equivalent policy: log-only for structural anomaly"
+        if policy_action == ACTION_DROP_SOURCE:
             return (
                 ACTION_DROP_SOURCE,
-                "source-wide block: the behaviour implicates the host, not one conversation",
+                "equivalent policy: source-wide block for source-implicating behaviour",
             )
 
-        if alert.attack_class in (CLASS_BRUTEFORCE, CLASS_DOS):
+        if policy_action == ACTION_DROP_PAIR or alert.attack_class in (CLASS_BRUTEFORCE, CLASS_DOS):
             if alert.dst_ip:
                 return (
                     ACTION_DROP_PAIR,

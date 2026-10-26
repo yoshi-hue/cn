@@ -33,12 +33,44 @@ def plan(trials=5, warmup=WARMUP_SECONDS):
     return runs
 
 
+def extended_plan(trials=20, warmup=WARMUP_SECONDS):
+    """Submission-complete matrix: >=20 trials/class on >=20 hosts.
+
+    The returned plan is declarative; execute it in Docker/Mininet with the
+    campaign driver. No result is claimed until those runs produce evidence.
+    """
+    runs = []
+    for case in ("C2", "C3", "C4", "C5"):
+        for trial in range(1, trials + 1):
+            runs.append(dict(case=case, phase="large20", mitigator="none",
+                             trial=trial, seed=30000 + trial,
+                             warmup=warmup, topology_size=20,
+                             label="large20-%s-none" % case))
+    for window in (5.0, 10.0, 20.0):
+        for alpha in (0.1, 0.2, 0.4):
+            for trial in range(1, 6):
+                runs.append(dict(case="C5", phase="sweep", mitigator="none",
+                                 trial=trial, seed=40000 + trial,
+                                 warmup=12 * window + 15, window_seconds=window,
+                                 profile_alpha=alpha,
+                                 label="sweep-C5-w%s-a%s" % (window, alpha)))
+    for case in ("C2", "C3", "C4", "C5"):
+        for trial in range(1, trials + 1):
+            runs.append(dict(case=case, phase="hybrid", mitigator="hybrid",
+                             detector_mode="hybrid", trial=trial,
+                             seed=50000 + trial, warmup=warmup,
+                             topology_size=20, cumulative_lateral=True,
+                             label="hybrid20-%s" % case))
+    return runs
+
+
 def main():
     parser = argparse.ArgumentParser(__doc__)
-    parser.add_argument("--trials", type=int, default=5)
+    parser.add_argument("--trials", type=int, default=20)
     parser.add_argument("--warmup", type=float, default=WARMUP_SECONDS)
+    parser.add_argument("--extended", action="store_true")
     args = parser.parse_args()
-    runs = plan(args.trials, args.warmup)
+    runs = extended_plan(args.trials, args.warmup) if args.extended else plan(args.trials, args.warmup)
     print(json.dumps(dict(runs=runs, count=len(runs)), indent=2))
 
 

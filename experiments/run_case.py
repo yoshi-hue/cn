@@ -44,7 +44,20 @@ def run_trial(
     observation=60,
     reverse=False,
     benign=False,
+    detector_mode="both",
+    topology_size=None,
+    window_seconds=None,
+    profile_alpha=None,
+    cumulative_lateral=False,
 ):
+    if topology_size is not None:
+        config.configure_topology(topology_size)
+    if window_seconds is not None:
+        config.WINDOW_SECONDS = window_seconds
+    if profile_alpha is not None:
+        config.PROFILE_ALPHA = profile_alpha
+    if cumulative_lateral:
+        config.CUMULATIVE_LATERAL_ENABLED = True
     from experiments.runner import Controller, Workload, dump_flows
     from topo.lantern_topo import build_network, disable_offloads
 
@@ -69,7 +82,11 @@ def run_trial(
     )
     meta_path = Path(log).with_suffix(".meta.json")
     meta_path.write_text(json.dumps(metadata, indent=2) + "\n")
-    controller = Controller(label, trial, mitigator, log)
+    controller = Controller(
+        label, trial, mitigator, log, detector_mode=detector_mode,
+        topology_size=topology_size, window_seconds=window_seconds,
+        profile_alpha=profile_alpha, cumulative_lateral=cumulative_lateral,
+    )
     net = workload = None
     reasons = []
     attacks = list(CASES[case].attacks)
@@ -156,6 +173,11 @@ def main():
     parser.add_argument("--observation", type=float, default=60)
     parser.add_argument("--reverse", action="store_true")
     parser.add_argument("--benign", action="store_true")
+    parser.add_argument("--detector-mode", choices=("both", "hybrid"), default="both")
+    parser.add_argument("--topology-size", type=int)
+    parser.add_argument("--window-seconds", type=float)
+    parser.add_argument("--profile-alpha", type=float)
+    parser.add_argument("--cumulative-lateral", action="store_true")
     args = parser.parse_args()
     from mininet.log import setLogLevel
 

@@ -10,7 +10,7 @@ import subprocess
 import sys
 import time
 from datetime import datetime, timezone
-from experiments.run_all import plan
+from experiments.run_all import plan, extended_plan
 from experiments.run_case import WARMUP_SECONDS
 from experiments.validation import read_events
 
@@ -330,7 +330,7 @@ def pilot_matrix():
 def main():
     parser = argparse.ArgumentParser(__doc__)
     parser.add_argument(
-        "action", choices=["create", "pilot", "calibrate", "evaluate", "all", "verify"]
+        "action", choices=["create", "pilot", "calibrate", "evaluate", "extended", "all", "verify"]
     )
     parser.add_argument("--campaign", required=True)
     parser.add_argument("--thresholds-from", type=Path, help="reuse a verified calibration directory")
@@ -358,11 +358,18 @@ def main():
         from experiments.analyze import discover_runs, score_run
         for run in discover_runs(directory / "pilot"):
             result = score_run(run)
+
             for row in result["containment"]:
                 if row.get("blocking_outcome") in (
                     "insufficient_post_confirmation_traffic", "unavailable_receiver_evidence"
                 ):
                     raise RuntimeError("pilot cannot measure blocking: " + str(row))
+    if args.action == "extended":
+        frozen = directory / "thresholds.json"
+        if not frozen.exists():
+            raise RuntimeError("extended evaluation requires frozen thresholds")
+        records = execute(directory, extended_plan(20), frozen)
+        print("extended evaluation complete: %d runs" % len(records), flush=True)
     if args.action == "calibrate":
         calibrate(directory)
     if args.action in ("evaluate", "all"):

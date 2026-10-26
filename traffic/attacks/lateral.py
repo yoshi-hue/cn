@@ -26,13 +26,13 @@ from traffic.common import (
 # One plausible service port per target. Using a single port per host keeps the
 # per-window port count far below the port-scan rule, while still being the
 # kind of service an attacker would actually probe.
-DEFAULT_PATH = [
-    ("h1", 22),  # SSH to a workstation
-    ("h2", 445),  # SMB file sharing
-    ("h3", 3389),  # RDP
-    ("h5", 22),  # SSH to the auth server
-    ("server", 1433),  # database
-]
+def default_path():
+    """Return a deterministic path that scales with the configured topology."""
+    ports = [22, 445, 3389]
+    path = [(host, ports[index % len(ports)])
+            for index, host in enumerate(config.WORKSTATIONS)]
+    path += [("h5", 22), ("server", 1433)]
+    return path
 
 PACKETS_PER_TARGET = 3
 
@@ -59,7 +59,7 @@ def check_pacing(dwell, packets_per_target=PACKETS_PER_TARGET):
             % (ports_per_window, config.PORTSCAN_PORTS)
         )
 
-    auth_targets = [t for t in DEFAULT_PATH if t[1] in config.AUTH_PORTS]
+    auth_targets = [t for t in default_path() if t[1] in config.AUTH_PORTS]
     attempts_per_target = packets_per_target
     if attempts_per_target > config.BRUTEFORCE_ATTEMPTS and auth_targets:
         problems.append(
@@ -134,9 +134,9 @@ def main():
         args.trial,
         src_ip,
         note="sequential contact with %d internal hosts, %d packets each, %.1fs apart"
-        % (len(DEFAULT_PATH), args.packets, args.dwell),
+        % (len(default_path()), args.packets, args.dwell),
     ) as truth:
-        visited = run(src_ip, DEFAULT_PATH, args.dwell, args.packets, truth=truth)
+        visited = run(src_ip, default_path(), args.dwell, args.packets, truth=truth)
 
     print(
         "lateral: %s reached %d hosts: %s"

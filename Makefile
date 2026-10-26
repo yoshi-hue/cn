@@ -4,7 +4,7 @@ CAMPAIGN ?=
 DOCKER_READ = docker run --rm --network none -v "$(CURDIR):/opt/lantern" --entrypoint python3 $(IMAGE)
 DOCKER_NET = docker run --rm --privileged --network none -v "$(CURDIR):/opt/lantern" $(IMAGE)
 
-.PHONY: build test validate datapath-check integration plan pilot calibrate evaluate campaign analyze verify package clean clean-campaign run-case
+.PHONY: build test validate datapath-check integration plan extended-plan pilot calibrate evaluate campaign analyze verify package clean clean-campaign run-case figures
 build:
 	docker build -f docker/Dockerfile -t $(IMAGE) .
 test:
@@ -18,6 +18,10 @@ integration:
 	$(DOCKER_NET) python3 -m experiments.integration
 plan:
 	python3 -m experiments.run_all
+extended-plan:
+	python3 -m experiments.run_all --extended
+figures:
+	python3 scripts/generate_figures.py --raw submission/evidence/benign/attempt-1/raw/benign-C1-none_trial01.jsonl
 campaign:
 	@test -n "$(CAMPAIGN)" || (echo 'Set CAMPAIGN=results/campaigns/unique-name'; exit 1)
 	python3 -m experiments.campaign all --campaign "$(CAMPAIGN)"

@@ -36,6 +36,7 @@ from lantern.collector import FlowCollector
 from lantern.decision import AlertManager
 from lantern.detector_baseline import BaselineDetector
 from lantern.detector_graph import GraphDetector
+from lantern.detector_hybrid import HybridDetector
 from lantern.graph_builder import GraphBuilder
 from lantern.features import summarise_window
 from lantern.metrics import EventLog, ResourceSampler
@@ -52,6 +53,7 @@ SETTINGS = {
     "mitigator": os.environ.get("LANTERN_MITIGATOR", config.DEFAULT_MITIGATOR),
     "case": os.environ.get("LANTERN_CASE", "adhoc"),
     "trial": int(os.environ.get("LANTERN_TRIAL", "0")),
+    "detector_mode": os.environ.get("LANTERN_DETECTOR_MODE", "both"),
 }
 
 
@@ -76,6 +78,7 @@ class LanternIDS(app_manager.RyuApp):
         self.baseline = BaselineDetector()
         self.graph_builder = GraphBuilder()
         self.graph = GraphDetector(self.graph_builder)
+        self.hybrid = HybridDetector(self.baseline, self.graph)
         self.mitigation = MitigationEngine(
             logger=self.logger, clock=self.clock, on_event=self.event_log.write
         )
@@ -99,6 +102,10 @@ class LanternIDS(app_manager.RyuApp):
                 "graph_threshold": config.GRAPH_SCORE_THRESHOLD,
                 "graph_weights": config.GRAPH_WEIGHTS,
                 "profile_warmup_windows": config.PROFILE_WARMUP_WINDOWS,
+                "detector_mode": SETTINGS["detector_mode"],
+                "mitigation_policy": config.MITIGATION_POLICY_NAME,
+                "topology_size": len(config.HOSTS),
+                "profile_alpha": config.PROFILE_ALPHA,
             },
         )
         self.logger.info(
@@ -302,11 +309,18 @@ class LanternIDS(app_manager.RyuApp):
 
         warming_up = self.graph_builder.warming_up
         eligible = [h for h in window.hosts if self.graph_builder.profile_for(h).ready]
-        baseline_alerts = self.baseline.detect(window)
-        graph_alerts = self.graph.detect(window)
+        mode = SETTINGS["detector_mode"]
+        if mode == "hybrid":
+            baseline_alerts = []
+            graph_alerts = self.hybrid.detect(window)
+        else:
+            baseline_alerts = self.baseline.detect(window)
+            graph_alerts = self.graph.detect(window)
 
         timing = {"baseline_seconds": round(self.baseline.last_compute_seconds, 6)}
         timing.update(self.graph.timing_snapshot())
+        if mode == "hybrid":
+            timing.update(self.hybrid.timing_snapshot())
         timing["window_index"] = window.index
         timing["hosts"] = len(window.active_hosts())
         timing["complete_window"] = window.end <= self.clock()
