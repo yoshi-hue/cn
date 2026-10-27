@@ -1,0 +1,4 @@
+phase,cohort,attack_class,detector,detected,instances,coverage,wilson_low,wilson_high,class_exact,mttd_n,mttd_mean,mttd_median,mttd_minimum,mttd_maximum
+large20,primary,portscan,baseline,8,8,1.0,0.6755924351161198,1,8,8,7.9432260394096375,8.049866557121277,6.0419089794158936,9.993077993392944
+large20,primary,portscan,graph,8,8,1.0,0.6755924351161198,1,0,8,7.986468255519867,8.082640767097473,6.05405330657959,10.04974627494812
+large20,primary,portscan,hybrid,0,8,0.0,0,0.32440756488388023,0,0,,,,

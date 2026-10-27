@@ -1,0 +1,13 @@
+case,trial,phase,mitigator,policy,detector_mode,topology_size,window_seconds,profile_alpha,run,valid,legacy,reasons
+C1,1,calibration,none,class,both,20,10.0,0.2,calibration/attempt-1/raw/calibration-C1-none_trial01,True,False,
+C1,2,calibration,none,class,both,20,10.0,0.2,calibration/attempt-1/raw/calibration-C1-none_trial02,True,False,
+C1,3,calibration,none,class,both,20,10.0,0.2,calibration/attempt-1/raw/calibration-C1-none_trial03,True,False,
+C2,1,large20,none,class,both,20,10.0,0.2,large20/attempt-1/raw/large20-C2-none_trial01,True,False,
+C2,2,large20,none,class,both,20,10.0,0.2,large20/attempt-1/raw/large20-C2-none_trial02,True,False,
+C2,3,large20,none,class,both,20,10.0,0.2,large20/attempt-1/raw/large20-C2-none_trial03,True,False,
+C2,4,large20,none,class,both,20,10.0,0.2,large20/attempt-1/raw/large20-C2-none_trial04,True,False,
+C2,5,large20,none,class,both,20,10.0,0.2,large20/attempt-1/raw/large20-C2-none_trial05,True,False,
+C2,6,large20,none,class,both,20,10.0,0.2,large20/attempt-1/raw/large20-C2-none_trial06,True,False,
+C2,7,large20,none,class,both,20,10.0,0.2,large20/attempt-1/raw/large20-C2-none_trial07,True,False,
+C2,8,large20,none,class,both,20,10.0,0.2,large20/attempt-1/raw/large20-C2-none_trial08,True,False,
+C2,9,large20,none,class,both,20,10.0,0.2,large20/attempt-1/raw/large20-C2-none_trial09,False,False,missing validity report

@@ -1,0 +1,9 @@
+case,trial,phase,mitigator,policy,detector_mode,topology_size,window_seconds,profile_alpha,run,attack_id,attack_class,src,baseline_detected,baseline_class_exact,baseline_mttd,graph_detected,graph_class_exact,graph_mttd,hybrid_detected,hybrid_class_exact,hybrid_mttd
+C2,1,large20,none,class,both,20,10.0,0.2,large20/attempt-1/raw/large20-C2-none_trial01,c29a60a5c61f4acb80129bf930c55930,portscan,10.0.0.4,True,True,7.600895643234253,True,False,7.640307903289795,False,False,
+C2,2,large20,none,class,both,20,10.0,0.2,large20/attempt-1/raw/large20-C2-none_trial02,47051a08e85a4a8dab7a581d39cf7d56,portscan,10.0.0.4,True,True,9.993077993392944,True,False,10.04974627494812,False,False,
+C2,3,large20,none,class,both,20,10.0,0.2,large20/attempt-1/raw/large20-C2-none_trial03,108651c77e5e4e2aaab318371a6e8a1b,portscan,10.0.0.4,True,True,9.156273603439331,True,False,9.251706838607788,False,False,
+C2,4,large20,none,class,both,20,10.0,0.2,large20/attempt-1/raw/large20-C2-none_trial04,fd18e314b050406fbbaef27375d1477d,portscan,10.0.0.4,True,True,6.484704256057739,True,False,6.527418613433838,False,False,
+C2,5,large20,none,class,both,20,10.0,0.2,large20/attempt-1/raw/large20-C2-none_trial05,a2328efbcf3c469db316ff55887a5f7f,portscan,10.0.0.4,True,True,6.0419089794158936,True,False,6.05405330657959,False,False,
+C2,6,large20,none,class,both,20,10.0,0.2,large20/attempt-1/raw/large20-C2-none_trial06,bf803beb197a4b50b169bf2643fd8b96,portscan,10.0.0.4,True,True,8.77298903465271,True,False,8.817423343658447,False,False,
+C2,7,large20,none,class,both,20,10.0,0.2,large20/attempt-1/raw/large20-C2-none_trial07,d00be169d47d4febbff7b0d8d20de768,portscan,10.0.0.4,True,True,6.997121334075928,True,False,7.026116132736206,False,False,
+C2,8,large20,none,class,both,20,10.0,0.2,large20/attempt-1/raw/large20-C2-none_trial08,f7cdfb5e883c4aee911b4263293fd4d7,portscan,10.0.0.4,True,True,8.4988374710083,True,False,8.524973630905151,False,False,

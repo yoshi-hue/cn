@@ -1,0 +1,9 @@
+case,trial,phase,mitigator,policy,detector_mode,topology_size,window_seconds,profile_alpha,run,attack_id,attack_class,rule_confirmation_delay,observed_blocking,first_alert_wall,hosts_reached_after_alert,alert_to_confirmation,receiver_evidence_available,post_confirmation_seconds,testable,drop_counter_increased,blocking_outcome,measurement_protocol_version
+C2,1,large20,none,class,both,20,10.0,0.2,large20/attempt-1/raw/large20-C2-none_trial01,c29a60a5c61f4acb80129bf930c55930,portscan,,unverified,1793113402.0656612,1,,True,,False,False,no_confirmation,2
+C2,2,large20,none,class,both,20,10.0,0.2,large20/attempt-1/raw/large20-C2-none_trial02,47051a08e85a4a8dab7a581d39cf7d56,portscan,,unverified,1793113707.7515097,1,,True,,False,False,no_confirmation,2
+C2,3,large20,none,class,both,20,10.0,0.2,large20/attempt-1/raw/large20-C2-none_trial03,108651c77e5e4e2aaab318371a6e8a1b,portscan,,unverified,1793114002.2595832,1,,True,,False,False,no_confirmation,2
+C2,4,large20,none,class,both,20,10.0,0.2,large20/attempt-1/raw/large20-C2-none_trial04,fd18e314b050406fbbaef27375d1477d,portscan,,unverified,1793114286.1814246,1,,True,,False,False,no_confirmation,2
+C2,5,large20,none,class,both,20,10.0,0.2,large20/attempt-1/raw/large20-C2-none_trial05,a2328efbcf3c469db316ff55887a5f7f,portscan,,unverified,1793114593.4246418,1,,True,,False,False,no_confirmation,2
+C2,6,large20,none,class,both,20,10.0,0.2,large20/attempt-1/raw/large20-C2-none_trial06,bf803beb197a4b50b169bf2643fd8b96,portscan,,unverified,1793114890.052138,1,,True,,False,False,no_confirmation,2
+C2,7,large20,none,class,both,20,10.0,0.2,large20/attempt-1/raw/large20-C2-none_trial07,d00be169d47d4febbff7b0d8d20de768,portscan,,unverified,1793115183.189509,1,,True,,False,False,no_confirmation,2
+C2,8,large20,none,class,both,20,10.0,0.2,large20/attempt-1/raw/large20-C2-none_trial08,f7cdfb5e883c4aee911b4263293fd4d7,portscan,,unverified,1793115492.7119558,1,,True,,False,False,no_confirmation,2
