@@ -2,3 +2,12 @@
   cipher=algorithms.TripleDES,
 /usr/local/lib/python3.14/dist-packages/scapy/layers/ipsec.py:516: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
   cipher=algorithms.TripleDES,
+10.0.0.25 t=6.9s sent=10
+10.0.0.25 t=14.3s sent=20
+10.0.0.25 t=21.8s sent=30
+10.0.0.25 t=30.2s sent=40
+10.0.0.25 t=38.6s sent=50
+10.0.0.25 t=46.3s sent=60
+10.0.0.25 t=53.2s sent=70
+10.0.0.25 t=62.0s sent=80
+10.0.0.25 t=69.4s sent=90

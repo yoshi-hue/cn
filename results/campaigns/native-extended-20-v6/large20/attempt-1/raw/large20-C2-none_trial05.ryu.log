@@ -5,3 +5,4 @@ Lantern started: case=large20-C2-none trial=5 mitigator=none log=/mnt/c/Users/Ma
 instantiating app ryu.controller.ofp_handler of OFPHandler
 switch 0000000000000001 connected
 switch 0000000000000002 connected
+ALERT [baseline] portscan src=10.0.0.1 score=6.00 -- 6 distinct destination hosts (> 4)  (scoring only, not actuating)
