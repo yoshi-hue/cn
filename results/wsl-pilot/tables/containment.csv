@@ -1,0 +1,2 @@
+case,trial,phase,mitigator,policy,detector_mode,topology_size,window_seconds,profile_alpha,run,attack_id,attack_class,rule_confirmation_delay,observed_blocking,first_alert_wall,hosts_reached_after_alert,alert_to_confirmation,receiver_evidence_available,post_confirmation_seconds,testable,drop_counter_increased,blocking_outcome,measurement_protocol_version
+C5,1,control,none,class,both,20,10.0,0.2,control-C5-native-linux-startup20_trial01,5a36a99d3f6c4ec1910c470c739b2552,lateral,,unverified,1793108009.8514342,5,,True,,False,False,no_confirmation,2

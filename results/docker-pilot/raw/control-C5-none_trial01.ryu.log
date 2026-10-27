@@ -1,0 +1,7 @@
+loading app lantern/app.py
+loading app ryu.controller.ofp_handler
+instantiating app lantern/app.py of LanternIDS
+Lantern started: case=control-C5-none trial=1 mitigator=none log=results/docker-pilot/raw/control-C5-none_trial01.jsonl
+instantiating app ryu.controller.ofp_handler of OFPHandler
+switch 0000000000000001 connected
+switch 0000000000000002 connected

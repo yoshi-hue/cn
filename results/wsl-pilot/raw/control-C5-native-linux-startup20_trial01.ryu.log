@@ -1,0 +1,11 @@
+loading app lantern.app
+loading app ryu.controller.ofp_handler
+instantiating app lantern.app of LanternIDS
+Lantern started: case=control-C5-native-linux-startup20 trial=1 mitigator=none log=/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/wsl-pilot/raw/control-C5-native-linux-startup20_trial01.jsonl
+instantiating app ryu.controller.ofp_handler of OFPHandler
+switch 0000000000000001 connected
+switch 0000000000000002 connected
+ALERT [baseline] portscan src=10.0.0.1 score=6.00 -- 6 distinct destination hosts (> 4)  (scoring only, not actuating)
+ALERT [baseline] lateral src=10.0.0.1 score=8.00 -- 8 cumulative distinct new destinations (>= 5)  (scoring only, not actuating)
+ALERT [graph] lateral src=10.0.0.4 score=8.43 -- 33% of its neighbours were never seen before (1 new); contacted 3 hosts; used 5 distinct ports  (scoring only, not actuating)
+ALERT [baseline] lateral src=10.0.0.4 score=5.00 -- 5 cumulative distinct new destinations (>= 5)  (scoring only, not actuating)

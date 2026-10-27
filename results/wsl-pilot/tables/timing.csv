@@ -1,0 +1,5 @@
+case,trial,phase,mitigator,policy,detector_mode,topology_size,window_seconds,profile_alpha,run,decision_id,alert_id,detector,action,actuate,src,alert_to_decision,decision_to_confirmation,all_switches_confirmed,confirmation_wall,confirmed_switches,required_switches
+C5,1,control,none,class,both,20,10.0,0.2,control-C5-native-linux-startup20_trial01,082a4f96009c4f4f871a74379195cd2a,e7ea76bf47dc47eda6598a93eb40128d,baseline,drop_source,False,10.0.0.1,0.0073284999998577405,,False,,0,0
+C5,1,control,none,class,both,20,10.0,0.2,control-C5-native-linux-startup20_trial01,0ec97a7439614001b71a750ec39cd562,67747585593a4a3c821c802379ffbdeb,baseline,drop_source,False,10.0.0.1,0.029623199000525346,,False,,0,0
+C5,1,control,none,class,both,20,10.0,0.2,control-C5-native-linux-startup20_trial01,c33cae8cdf194e05a8698b9e92f3ee30,23d3dfe55db24a89b14a6e5ab1461e05,graph,drop_source,False,10.0.0.4,0.0028056999999535037,,False,,0,0
+C5,1,control,none,class,both,20,10.0,0.2,control-C5-native-linux-startup20_trial01,475854d09b29487cb3901088299b398f,2cf9a7bf3a604ddfa456fd586d5b8a15,baseline,drop_source,False,10.0.0.4,0.02230909999980213,,False,,0,0

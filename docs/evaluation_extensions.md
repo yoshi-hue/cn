@@ -17,8 +17,9 @@ python3 -m experiments.campaign extended --campaign results/campaigns/extended-2
 ```
 
 The extended plan contains four attack classes (port scan, DoS, brute force,
-and lateral movement), 20 trials per class on a 20-host topology, a 3x3
-window/alpha sweep, and 20 hybrid trials per attack class. Execute the plan
+and lateral movement), 20 trials per class on a 20-host topology, a dedicated
+20-trial cumulative-baseline C5 control, a source-wide/pair-only policy matrix,
+a 3x3 window/alpha sweep, and 20 hybrid trials per attack class. Execute the plan
 through the normal Docker campaign driver after calibration; do not treat the
 plan itself as measured results.
 
@@ -32,6 +33,11 @@ mode, and the common `class-equivalent-v1` mitigation policy in `run_start`.
 destinations across windows and emits a `lateral` label once the configured
 threshold is crossed. `--detector-mode hybrid` combines threshold and graph
 alerts on the same window and records corroboration evidence when both agree.
+
+Policy arms are recorded as `policy=source` and `policy=pair`. The source arm
+always installs a source-wide drop when the selected detector alerts. The pair
+arm installs only a source/destination rule when the alert names a victim; a
+structural alert without a victim is logged as uncontainable under that policy.
 
 ## Figures and timing
 

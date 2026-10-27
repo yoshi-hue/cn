@@ -39,8 +39,8 @@ if _TOPOLOGY_SIZE > 6:
     for _number in range(6, _TOPOLOGY_SIZE):
         _switch = "s1" if _number % 2 == 0 else "s2"
         HOSTS["h%d" % _number] = (
-            "10.0.0.%d" % _number,
-            "00:00:00:00:00:%02x" % _number,
+            "10.0.0.%d" % (10 + _number),
+            "00:00:00:00:01:%02x" % _number,
             _switch,
             "workstation",
         )
@@ -61,7 +61,7 @@ def configure_topology(size):
     }
     for number in range(6, size):
         base["h%d" % number] = (
-            "10.0.0.%d" % number, "00:00:00:00:00:%02x" % number,
+            "10.0.0.%d" % (10 + number), "00:00:00:00:01:%02x" % number,
             "s1" if number % 2 == 0 else "s2", "workstation",
         )
     HOSTS = base
@@ -81,8 +81,8 @@ WORKSTATIONS = [name for name, value in HOSTS.items()
 IP_TO_HOST = {ip: name for name, (ip, _, _, _) in HOSTS.items()}
 HOST_TO_IP = {name: ip for name, (ip, _, _, _) in HOSTS.items()}
 
-CONTROLLER_IP = "127.0.0.1"
-CONTROLLER_PORT = 6653
+CONTROLLER_IP = _os.environ.get("LANTERN_CONTROLLER_IP", "127.0.0.1")
+CONTROLLER_PORT = int(_os.environ.get("LANTERN_CONTROLLER_PORT", "6653"))
 
 # --------------------------------------------------------------------------
 # Collection (Algorithm A)
@@ -185,7 +185,10 @@ GRAPH_SCORE_THRESHOLD = 6.0
 # it explicitly through LANTERN_CUMULATIVE_LATERAL.
 CUMULATIVE_LATERAL_ENABLED = _os.environ.get("LANTERN_CUMULATIVE_LATERAL", "0") == "1"
 CUMULATIVE_NEW_DESTINATIONS = int(
-    _os.environ.get("LANTERN_CUMULATIVE_NEW_DESTINATIONS", "6")
+    _os.environ.get("LANTERN_CUMULATIVE_NEW_DESTINATIONS", "5")
+)
+CUMULATIVE_LATERAL_HISTORY_WINDOWS = int(
+    _os.environ.get("LANTERN_CUMULATIVE_LATERAL_HISTORY_WINDOWS", "6")
 )
 
 # Both detector mitigation arms use this single class-to-action policy.  It is
@@ -199,6 +202,7 @@ MITIGATION_POLICY = {
     "dos": "drop_pair",
     "graph_anomaly": "log_only",
 }
+MITIGATION_POLICY_MODES = ("class", "source", "pair")
 
 # --------------------------------------------------------------------------
 # Decision and mitigation (Algorithm D, report section 5.7)

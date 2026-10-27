@@ -10,7 +10,7 @@ import statistics
 from experiments.validation import read_events
 from lantern import config
 
-DETECTORS = ("baseline", "graph")
+DETECTORS = ("baseline", "graph", "hybrid")
 
 
 def load_events(path):
@@ -238,6 +238,11 @@ def score_run(run):
         trial=run["trial"],
         phase=phase,
         mitigator=start.get("mitigator", "unknown"),
+        policy=meta.get("policy", start.get("policy", "class")),
+        detector_mode=meta.get("detector_mode", start.get("detector_mode", "both")),
+        topology_size=meta.get("topology_size", start.get("topology_size")),
+        window_seconds=meta.get("window_seconds", start.get("window_seconds")),
+        profile_alpha=meta.get("profile_alpha", start.get("profile_alpha")),
         run=run.get("run_id", path.stem),
     )
     candidates = [
@@ -444,6 +449,21 @@ def score_run(run):
                 ) != observations[0]["counts"].get(truth["src"], 0):
                     quiet = False
             verified = dropped and quiet
+        first_alert = min(
+            (a.get("created_wall", a.get("wall")) for a in candidates
+             if match_alert(a, truths) is truth),
+            default=None,
+        )
+        reached_after_alert = sum(
+            any(
+                e.get("counts", {}).get(truth["src"], 0) > 0
+                for e in receivers
+                if e.get("dst") == target
+                and first_alert is not None
+                and first_alert <= e.get("wall", 0) <= attack_interval(truth)[1]
+            )
+            for target in truth.get("targets", [])
+        ) if first_alert is not None else None
         containment.append(
             dict(
                 identity,
@@ -453,6 +473,9 @@ def score_run(run):
                     confirm - attack_interval(truth)[0] if confirm else None
                 ),
                 observed_blocking="verified" if verified else "unverified",
+                first_alert_wall=first_alert,
+                hosts_reached_after_alert=reached_after_alert,
+                alert_to_confirmation=(confirm - first_alert if confirm and first_alert else None),
             )
         )
         if meta.get("measurement_protocol_version", 1) >= 2:
@@ -493,6 +516,7 @@ def score_run(run):
             "graph_total_seconds",
             "graph_build_seconds",
             "betweenness_seconds",
+            "hybrid_total_seconds",
         ]:
             for metric, value in stats([e.get(key) for e in ts]).items():
                 row[key + "_" + metric] = value
@@ -547,7 +571,7 @@ def coverage_rows(results):
         if not r["validity"]["valid"] or r["identity"]["mitigator"] != "none":
             continue
         phase = r["identity"]["phase"]
-        if phase not in ("detection", "order"):
+        if phase not in ("detection", "order", "large20", "control", "sweep", "hybrid"):
             continue
         for attack in r["attacks"]:
             cohort = (
@@ -559,6 +583,8 @@ def coverage_rows(results):
     rows = []
     for (phase, cohort, attack_class), attacks in sorted(groups.items()):
         for detector in DETECTORS:
+            if attacks and detector + "_detected" not in attacks[0]:
+                continue
             hits = sum(a[detector + "_detected"] for a in attacks)
             low, high = wilson(hits, len(attacks))
             row = dict(
@@ -614,10 +640,10 @@ def analyze(raw, output):
     if measured:
         groups = defaultdict(list)
         for row in measured:
-            groups[(row["mitigator"], row["attack_class"])].append(row)
-            groups[(row["mitigator"], "all")].append(row)
+            groups[(row["mitigator"], row["policy"], row["attack_class"])].append(row)
+            groups[(row["mitigator"], row["policy"], "all")].append(row)
         write_csv(output / "blocking_summary.csv", [
-            dict(mitigator=key[0], attack_class=key[1], records=len(rows),
+            dict(mitigator=key[0], policy=key[1], attack_class=key[2], records=len(rows),
                  testable=sum(r["testable"] for r in rows),
                  verified=sum(r["blocking_outcome"] == "verified" for r in rows),
                  observed_leakage=sum(r["blocking_outcome"] == "observed_leakage" for r in rows),
@@ -669,7 +695,7 @@ def analyze(raw, output):
         for r in valid:
             mean = stats([row.get(metric) for row in r[key]])["mean"]
             identity = r["identity"]
-            groups[(identity["phase"], identity["case"], identity["mitigator"])].append(
+            groups[(identity["phase"], identity["case"], identity["mitigator"], identity["policy"])].append(
                 mean
             )
         for group, values in groups.items():
@@ -678,6 +704,7 @@ def analyze(raw, output):
                     phase=group[0],
                     case=group[1],
                     mitigator=group[2],
+                    policy=group[3],
                     metric=metric,
                     **stats(values),
                 )
@@ -725,13 +752,25 @@ def analyze(raw, output):
             for r in result["overhead"]
             if r["period"] == "evaluation"
         ]
+        cost_specs = [
+            ("baseline_seconds_mean", "baseline"),
+            ("graph_total_seconds_mean", "graph"),
+            ("hybrid_total_seconds_mean", "hybrid"),
+        ]
+        cost_specs = [
+            (key, label) for key, label in cost_specs
+            if any(r.get(key) is not None for r in costs)
+        ]
         values = [
             [r[key] * 1000 for r in costs if r.get(key) is not None]
-            for key in ["baseline_seconds_mean", "graph_total_seconds_mean"]
+            for key, _ in cost_specs
         ]
-        if all(values):
+        if cost_specs and all(values):
             fig, ax = plt.subplots(figsize=(6, 4))
-            ax.boxplot(values, labels=DETECTORS)
+            try:
+                ax.boxplot(values, tick_labels=[label for _, label in cost_specs])
+            except TypeError:  # Matplotlib < 3.9
+                ax.boxplot(values, labels=[label for _, label in cost_specs])
             ax.set_yscale("log")
             ax.set_ylabel("Per-run mean detector time (ms)")
             fig.tight_layout()

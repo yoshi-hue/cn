@@ -1,0 +1,4 @@
+phase,case,mitigator,policy,metric,n,mean,median,minimum,maximum
+control,C5,none,class,alert_to_decision,1,0.01551662475003468,0.01551662475003468,0.01551662475003468,0.01551662475003468
+control,C5,none,class,decision_to_confirmation,0,,,,
+control,C5,none,class,flowmod_to_confirmation,0,,,,

@@ -46,6 +46,24 @@ def extended_plan(trials=20, warmup=WARMUP_SECONDS):
                              trial=trial, seed=30000 + trial,
                              warmup=warmup, topology_size=20,
                              label="large20-%s-none" % case))
+    # Direct control for the reviewer's definitional concern: the cumulative
+    # threshold baseline is evaluated beside the graph detector on identical
+    # 20-host lateral-movement trials, with actuation disabled.
+    for trial in range(1, trials + 1):
+        runs.append(dict(case="C5", phase="control", mitigator="none",
+                         trial=trial, seed=35000 + trial,
+                         warmup=warmup, topology_size=20,
+                         cumulative_lateral=True,
+                         label="control20-C5-none"))
+    for detector in ("baseline", "graph"):
+        for policy in ("source", "pair"):
+            for case in ("C2", "C3", "C4", "C5"):
+                for trial in range(1, trials + 1):
+                    runs.append(dict(case=case, phase="policy", mitigator=detector,
+                                     policy=policy, trial=trial,
+                                     seed=36000 + trial, warmup=warmup,
+                                     topology_size=20,
+                                     label="policy20-%s-%s-%s" % (detector, policy, case)))
     for window in (5.0, 10.0, 20.0):
         for alpha in (0.1, 0.2, 0.4):
             for trial in range(1, 6):

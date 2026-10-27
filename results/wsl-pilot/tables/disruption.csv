@@ -1,0 +1,11 @@
+case,trial,phase,mitigator,policy,detector_mode,topology_size,window_seconds,profile_alpha,run,group,period,attempts,successes,failure_rate,mean_success_latency
+C5,1,control,none,class,both,20,10.0,0.2,control-C5-native-linux-startup20_trial01,innocent,pre_attack,287,287,0.0,0.12643863194425142
+C5,1,control,none,class,both,20,10.0,0.2,control-C5-native-linux-startup20_trial01,innocent,attack,155,155,0.0,0.07862929713552266
+C5,1,control,none,class,both,20,10.0,0.2,control-C5-native-linux-startup20_trial01,innocent,between_attacks,34,34,0.0,0.027644417852972017
+C5,1,control,none,class,both,20,10.0,0.2,control-C5-native-linux-startup20_trial01,innocent,observation,0,0,,
+C5,1,control,none,class,both,20,10.0,0.2,control-C5-native-linux-startup20_trial01,innocent,recovery,389,389,0.0,0.03786425639078132
+C5,1,control,none,class,both,20,10.0,0.2,control-C5-native-linux-startup20_trial01,compromised,pre_attack,17,17,0.0,0.1333535552939793
+C5,1,control,none,class,both,20,10.0,0.2,control-C5-native-linux-startup20_trial01,compromised,attack,9,9,0.0,0.07937690011092652
+C5,1,control,none,class,both,20,10.0,0.2,control-C5-native-linux-startup20_trial01,compromised,between_attacks,2,2,0.0,0.013975350000237086
+C5,1,control,none,class,both,20,10.0,0.2,control-C5-native-linux-startup20_trial01,compromised,observation,0,0,,
+C5,1,control,none,class,both,20,10.0,0.2,control-C5-native-linux-startup20_trial01,compromised,recovery,23,23,0.0,0.03177730895640707

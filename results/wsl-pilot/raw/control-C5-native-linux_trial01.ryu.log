@@ -1,0 +1,16 @@
+loading app lantern.app
+loading app ryu.controller.ofp_handler
+instantiating app lantern.app of LanternIDS
+Lantern started: case=control-C5-native-linux trial=1 mitigator=none log=/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/wsl-pilot/raw/control-C5-native-linux_trial01.jsonl
+instantiating app ryu.controller.ofp_handler of OFPHandler
+switch 0000000000000001 connected
+switch 0000000000000002 connected
+LanternIDS: Exception occurred during handler processing. Backtrace from offending handler [state_change_handler] servicing event [EventOFPStateChange] follows.
+Traceback (most recent call last):
+  File "/opt/python3.8/lib/python3.8/site-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/lantern/app.py", line 169, in state_change_handler
+    self.event_log.write("switch_disconnected", {"dpid": datapath.id})
+  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/lantern/metrics.py", line 45, in write
+    self._fh.write(json.dumps(record, default=_json_default) + "\n")
+KeyboardInterrupt

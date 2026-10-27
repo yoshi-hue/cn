@@ -1,9 +1,11 @@
 """Graph-based lateral-movement detector (Algorithm C steps 5-9).
 
-This is the project's research contribution and the direct answer to Research
-Gaps 2 and 3: none of the 25 surveyed papers builds a network-wide model of
+This is the project's research contribution and a response to the SDN-specific
+research gap examined here: the controller builds a network-wide model of
 which hosts talk to which other hosts, so behaviour that is only suspicious in
-aggregate is structurally invisible to all of them.
+aggregate can be scored across the SDN fabric. This claim is intentionally
+narrower than claiming that no lateral-movement detector uses graphs anywhere
+in networking or security.
 
 For each host h in window t the detector computes graph features, converts each
 to a z-score against that host's own established normal, and combines them:

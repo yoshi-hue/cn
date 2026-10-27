@@ -1,0 +1,3 @@
+docker: Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint vigilant_gates (d3a40df14e08e4302a1aa707b599cfe2a83e4e6af6810d7d13a6bb25329401f5): Bind for 0.0.0.0:16653 failed: port is already allocated
+
+Run 'docker run --help' for more information

@@ -26,10 +26,10 @@ def sections(R):
     S.append('''<section class="cover">
 <p class="kicker">Final report</p>
 <h1>Graph-Based SDN Controller-Integrated Intrusion Detection and Automated Mitigation</h1>
-<p class="sub">Does a network-wide “who talks to whom” graph detect and stop internal lateral movement better than conventional threshold rules?</p>
+<p class="sub">Does an SDN-controller “who talks to whom” graph detect and stop internal lateral movement better than conventional threshold rules?</p>
 <div class="answer"><p class="kicker">Conclusion</p>
 <p><b>For lateral movement, yes. Overall, the two detectors are complementary.</b> Both detectors found the attacker in all five lateral-movement trials, but only the graph named the attack correctly (%d/5 vs %d/5). That label decided the block. In the ten lateral blocking tests, the baseline’s narrow rule let attack packets reach other hosts every time (%d/%d), while the graph’s block on all of the attacker’s traffic was verified in %d/%d with no leakage. The baseline covered more ground: it caught and blocked the scan, flood and login-retry attacks, which the graph missed or mislabelled.</p>
-<p><b>Recommendation:</b> run both detectors, and let the graph’s label decide how wide the block should be. This combined policy is a proposal; it was not itself evaluated.</p></div>
+<p><b>Historical recommendation:</b> run both detectors, and let the graph’s label decide how wide the block should be. This label-dependent policy was not evaluated independently; the new source-wide/pair-only policy matrix is required before treating it as a result.</p></div>
 <div class="kpis">
 <div><b>%d/5 vs %d/5</b><span>lateral movement named correctly, graph vs baseline</span></div>
 <div><b>%d/%d vs %d/%d</b><span>lateral blocks verified, graph vs baseline (baseline leaked in %d/%d)</span></div>
@@ -49,7 +49,7 @@ def sections(R):
 
     S.append('''<section class="pb"><h2>The problem</h2>
 <p>Attackers who get inside a network rarely stop at one machine. They move laterally: from the first compromised host they contact other internal machines one by one, looking for the next way in. Each of those connections looks ordinary on its own, so detectors that judge one flow at a time can miss the pattern or misread it as something else. And in most networks, detection and response are separate, so an alert waits for a person before anything is blocked.</p>
-<p>Software-defined networking (SDN) offers a way to address both problems. Its central controller sees traffic statistics from every switch, so it can build a network-wide picture of who talks to whom, and it can push blocking rules into the switches directly. This project builds two detectors into one SDN controller and asks whether network-wide graph analysis detects, classifies and stops lateral movement better than conventional threshold rules, at acceptable cost and without disrupting legitimate users.</p>
+<p>Software-defined networking (SDN) offers a way to address both problems. Its central controller sees traffic statistics from every switch, so it can build a network-wide picture of who talks to whom, and it can push blocking rules into the switches directly. This project studies graph analysis inside an SDN controller and asks whether it detects, classifies and stops lateral movement better than conventional threshold rules, at acceptable cost and without disrupting legitimate users.</p>
 <h2>How it was tested</h2>
 %s<p class="cap">Emulated network: six hosts, two OpenFlow switches, one Ryu controller. h4 is the attacker.</p>
 <ul>

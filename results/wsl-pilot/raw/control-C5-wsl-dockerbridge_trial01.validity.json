@@ -1,0 +1,7 @@
+{
+  "valid": false,
+  "reasons": [
+    "unreadable event log: [Errno 2] No such file or directory: '/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/wsl-pilot/raw/control-C5-wsl-dockerbridge_trial01.jsonl'",
+    "RuntimeError: controller did not start listening on port 6653; see /mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/wsl-pilot/raw/control-C5-wsl-dockerbridge_trial01.ryu.log"
+  ]
+}

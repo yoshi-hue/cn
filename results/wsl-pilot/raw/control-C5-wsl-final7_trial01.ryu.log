@@ -1,0 +1,14 @@
+2026-10-27T13:09:59Z|00001|vlog|INFO|opened log file /var/log/openvswitch/ovsdb-server.log
+2026-10-27T13:09:59Z|00001|vlog|INFO|opened log file /var/log/openvswitch/ovs-vswitchd.log
+2026-10-27T13:09:59Z|00002|ovs_numa|INFO|Discovered 4 CPU cores on NUMA node 0
+2026-10-27T13:09:59Z|00003|ovs_numa|INFO|Discovered 1 NUMA nodes and 4 CPU cores
+2026-10-27T13:09:59Z|00004|reconnect|INFO|unix:/var/run/openvswitch/db.sock: connecting...
+2026-10-27T13:09:59Z|00005|netlink_socket|INFO|netlink: could not enable listening to all nsid (Operation not permitted)
+2026-10-27T13:09:59Z|00006|reconnect|INFO|unix:/var/run/openvswitch/db.sock: connected
+loading app lantern.app
+loading app ryu.controller.ofp_handler
+instantiating app lantern.app of LanternIDS
+Lantern started: case=control-C5-wsl-final7 trial=1 mitigator=none log=/opt/lantern/results/wsl-pilot/raw/control-C5-wsl-final7_trial01.jsonl
+instantiating app ryu.controller.ofp_handler of OFPHandler
+switch 0000000000000001 connected
+switch 0000000000000002 connected

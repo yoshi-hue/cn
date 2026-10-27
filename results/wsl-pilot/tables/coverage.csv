@@ -1,0 +1,4 @@
+phase,cohort,attack_class,detector,detected,instances,coverage,wilson_low,wilson_high,class_exact,mttd_n,mttd_mean,mttd_median,mttd_minimum,mttd_maximum
+control,primary,lateral,baseline,1,1,1.0,0.20654931437723745,1,1,1,15.254495620727539,15.254495620727539,15.254495620727539,15.254495620727539
+control,primary,lateral,graph,1,1,1.0,0.20654931437723745,1,1,1,5.223961353302002,5.223961353302002,5.223961353302002,5.223961353302002
+control,primary,lateral,hybrid,0,1,0.0,0,0.7934506856227626,0,0,,,,

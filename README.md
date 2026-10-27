@@ -1,5 +1,10 @@
 # Lantern
 
+> The headline results in this README are from the archived six-host campaign.
+> The larger topology, cumulative control, policy matrix, parameter sweep, and
+> hybrid campaign are implemented but must be executed before they are treated
+> as new evidence.
+
 ### Graph-based SDN controller-integrated intrusion detection and automated mitigation
 
 **Six hosts · two OpenFlow switches · one Ryu controller · 95 evaluation trials, all valid · receiver-verified blocking**
@@ -14,7 +19,8 @@ Both see the same 10-second observation windows:
 
 - **Threshold baseline (Algorithm B)**: per-source and per-pair rules for port
   diversity, packet rate and repeated SYNs.
-- **Graph detector (Algorithm C)**: builds a host-communication graph each
+- **Graph detector (Algorithm C)**: inside the SDN controller, builds a
+  host-communication graph each
   window and scores every host against its own rolling profile (degree,
   new-neighbour ratio, port diversity, betweenness, community change).
 
@@ -326,8 +332,8 @@ These files form the audit trail:
 - **Verification is sampled.** A verified block means stable receiver counts
   across the sampled interval after confirmation, not a lossless wire capture.
   Source-wide drop counters can include the attacker's legitimate traffic.
-- **Combined policy not evaluated.** Pairing the baseline's breadth with the
-  graph's label is the recommendation, not a measured result.
+- **Policy separation.** The historical numbers use label-dependent actions;
+  the new campaign includes explicit source-wide and pair-only policy arms.
 - **TCAM is a proxy.** Flow-table entries measure software occupancy, not
   hardware TCAM.
 - **Out of scope:** ML classifiers, Suricata, redirection, production deployment

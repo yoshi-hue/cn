@@ -19,6 +19,8 @@ IMAGE = os.environ.get("IMAGE", "lantern-sdn-ids")
 
 
 def command_output(command):
+    if command and command[0] == "docker":
+        command = [os.environ.get("LANTERN_DOCKER", "docker")] + command[1:]
     return subprocess.check_output(command, cwd=str(ROOT), text=True).strip()
 
 
@@ -69,27 +71,43 @@ def source_hash():
 
 
 def container_command(run, raw, frozen=None):
-    command = [
-        "docker",
-        "run",
-        "--rm",
-        "--privileged",
-        "--network",
-        "none",
-        "-v",
-        str(ROOT) + ":/opt/lantern",
-        "-e",
-        "LANTERN_RAW=" + str(raw.relative_to(ROOT)),
-    ]
-    if frozen:
-        command += ["-e", "LANTERN_CONFIG=" + str(frozen.relative_to(ROOT))]
-    command += [IMAGE, "python3", "-m", "experiments.run_case"]
+    native = os.environ.get("LANTERN_NATIVE") == "1"
+    if native:
+        command = ["python3", "-m", "experiments.run_case"]
+        command = ["env", "LANTERN_RAW=" + str(raw)] + command
+        if frozen:
+            command.insert(1, "LANTERN_CONFIG=" + str(frozen))
+    else:
+        command = [
+            "docker",
+            "run",
+            "--rm",
+            "--privileged",
+            "--network",
+            "none",
+            "-v",
+            str(ROOT) + ":/opt/lantern",
+            "-e",
+            "LANTERN_RAW=" + str(raw.relative_to(ROOT)),
+        ]
+        if frozen:
+            command += ["-e", "LANTERN_CONFIG=" + str(frozen.relative_to(ROOT))]
+        command += [IMAGE, "python3", "-m", "experiments.run_case"]
+    flag_names = {
+        "topology_size": "topology-size",
+        "window_seconds": "window-seconds",
+        "profile_alpha": "profile-alpha",
+        "detector_mode": "detector-mode",
+        "cumulative_lateral": "cumulative-lateral",
+        "policy": "policy",
+    }
     for key, value in run.items():
+        flag = flag_names.get(key, key)
         if isinstance(value, bool):
             if value:
-                command += ["--" + key]
+                command += ["--" + flag]
         else:
-            command += ["--" + key, str(value)]
+            command += ["--" + flag, str(value)]
     return command
 
 
@@ -177,6 +195,15 @@ def execute(directory, runs, frozen=None):
             if raw.exists() and list(raw.glob(log.stem + "*")):
                 continue
             raw.mkdir(parents=True, exist_ok=True)
+            # Native Mininet runs can leave a namespace/veth behind after an
+            # invalid startup. Clear only Mininet's own state before retrying.
+            if os.environ.get("LANTERN_NATIVE") == "1":
+                subprocess.run(
+                    ["mn", "-c"],
+                    stdout=subprocess.DEVNULL,
+                    stderr=subprocess.DEVNULL,
+                    check=False,
+                )
             cmd = container_command(run, raw, frozen)
             print(
                 "[%d/%d] %s trial %d attempt %d"
@@ -212,7 +239,7 @@ def execute(directory, runs, frozen=None):
     return records
 
 
-def calibrate(directory):
+def calibrate(directory, topology_size=None):
     runs = [
         dict(
             case="C1",
@@ -226,6 +253,9 @@ def calibrate(directory):
         )
         for i in range(1, 4)
     ]
+    if topology_size:
+        for run in runs:
+            run["topology_size"] = topology_size
     execute(directory, runs)
     from experiments.analyze import discover_runs
 
@@ -334,6 +364,7 @@ def main():
     )
     parser.add_argument("--campaign", required=True)
     parser.add_argument("--thresholds-from", type=Path, help="reuse a verified calibration directory")
+    parser.add_argument("--topology-size", type=int, help="topology size for native calibration")
     args = parser.parse_args()
     directory = (ROOT / args.campaign).resolve()
     if ROOT not in directory.parents:
@@ -345,7 +376,7 @@ def main():
     if args.action == "verify":
         print(json.dumps(verify_source(directory), indent=2))
     if args.action == "all" and not args.thresholds_from:
-        calibrate(directory)
+        calibrate(directory, args.topology_size)
     if args.action in ("pilot", "all"):
         frozen = directory / "thresholds.json"
         if not frozen.exists():
@@ -371,7 +402,7 @@ def main():
         records = execute(directory, extended_plan(20), frozen)
         print("extended evaluation complete: %d runs" % len(records), flush=True)
     if args.action == "calibrate":
-        calibrate(directory)
+        calibrate(directory, args.topology_size)
     if args.action in ("evaluate", "all"):
         frozen = directory / "thresholds.json"
         if not frozen.exists():

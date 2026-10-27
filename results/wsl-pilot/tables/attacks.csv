@@ -1,0 +1,2 @@
+case,trial,phase,mitigator,policy,detector_mode,topology_size,window_seconds,profile_alpha,run,attack_id,attack_class,src,baseline_detected,baseline_class_exact,baseline_mttd,graph_detected,graph_class_exact,graph_mttd,hybrid_detected,hybrid_class_exact,hybrid_mttd
+C5,1,control,none,class,both,20,10.0,0.2,control-C5-native-linux-startup20_trial01,5a36a99d3f6c4ec1910c470c739b2552,lateral,10.0.0.4,True,True,15.254495620727539,True,True,5.223961353302002,False,False,

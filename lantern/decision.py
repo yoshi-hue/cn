@@ -53,7 +53,8 @@ class Decision:
 class AlertManager:
     """Deduplicates alerts, chooses actions, and gates actuation."""
 
-    def __init__(self, mitigator=None, cfg=config, clock=None, on_decision=None):
+    def __init__(self, mitigator=None, cfg=config, clock=None, on_decision=None,
+                 policy=None):
         mitigator = mitigator or cfg.DEFAULT_MITIGATOR
         if mitigator not in cfg.MITIGATOR_MODES:
             raise ValueError(
@@ -63,6 +64,9 @@ class AlertManager:
         self.cfg = cfg
         self.clock = clock
         self.on_decision = on_decision
+        self.policy = policy or "class"
+        if self.policy not in cfg.MITIGATION_POLICY_MODES:
+            raise ValueError("unknown mitigation policy: %s" % self.policy)
 
         self._last_alert_at = {}  # dedupe_key -> ts
         self.suppressed_count = 0
@@ -123,6 +127,13 @@ class AlertManager:
         cutting the source off from services it may legitimately be using --
         which is what the legitimate-traffic disruption metric measures.
         """
+        if self.policy == "source":
+            return ACTION_DROP_SOURCE, "scope policy: source-wide block"
+        if self.policy == "pair":
+            if alert.dst_ip:
+                return ACTION_DROP_PAIR, "scope policy: pair-only block"
+            return ACTION_LOG_ONLY, "scope policy: pair-only cannot name a victim"
+
         policy_action = self.cfg.MITIGATION_POLICY.get(alert.attack_class)
         if policy_action == ACTION_LOG_ONLY:
             return ACTION_LOG_ONLY, "equivalent policy: log-only for structural anomaly"
@@ -168,6 +179,7 @@ class AlertManager:
     def snapshot(self):
         return {
             "mitigator": self.mitigator,
+            "policy": self.policy,
             "alerts": self.alert_count,
             "suppressed": self.suppressed_count,
         }

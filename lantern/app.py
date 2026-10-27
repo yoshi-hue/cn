@@ -54,6 +54,7 @@ SETTINGS = {
     "case": os.environ.get("LANTERN_CASE", "adhoc"),
     "trial": int(os.environ.get("LANTERN_TRIAL", "0")),
     "detector_mode": os.environ.get("LANTERN_DETECTOR_MODE", "both"),
+    "policy": os.environ.get("LANTERN_POLICY", "class"),
 }
 
 
@@ -86,6 +87,7 @@ class LanternIDS(app_manager.RyuApp):
             mitigator=SETTINGS["mitigator"],
             clock=self.clock,
             on_decision=self._log_decision,
+            policy=SETTINGS["policy"],
         )
         self.sampler = ResourceSampler(
             self.event_log, extra_snapshot=self._overhead_snapshot
@@ -104,6 +106,7 @@ class LanternIDS(app_manager.RyuApp):
                 "profile_warmup_windows": config.PROFILE_WARMUP_WINDOWS,
                 "detector_mode": SETTINGS["detector_mode"],
                 "mitigation_policy": config.MITIGATION_POLICY_NAME,
+                "policy": SETTINGS["policy"],
                 "topology_size": len(config.HOSTS),
                 "profile_alpha": config.PROFILE_ALPHA,
             },

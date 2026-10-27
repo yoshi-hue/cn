@@ -14,6 +14,7 @@ same warmup, attack cases included.
 import os
 import signal
 import json
+import shlex
 import socket
 import subprocess
 import sys
@@ -49,7 +50,7 @@ class Controller:
 
     def __init__(self, case, trial, mitigator, log_path, port=None, quiet=False,
                  detector_mode="both", topology_size=None, window_seconds=None,
-                 profile_alpha=None, cumulative_lateral=False):
+                 profile_alpha=None, cumulative_lateral=False, policy="class"):
         self.case = case
         self.trial = trial
         self.mitigator = mitigator
@@ -61,17 +62,20 @@ class Controller:
         self.window_seconds = window_seconds
         self.profile_alpha = profile_alpha
         self.cumulative_lateral = cumulative_lateral
+        self.policy = policy
         self.process = None
         self.stdout_path = log_path.replace(".jsonl", ".ryu.log")
 
     def start(self):
         os.makedirs(os.path.dirname(self.log_path) or ".", exist_ok=True)
         command = [
-            "ryu-manager",
+            os.environ.get("LANTERN_RYU_MANAGER", "ryu-manager"),
             "--ofp-tcp-listen-port",
             str(self.port),
-            "lantern/app.py",
+            "lantern.app",
         ]
+        if os.environ.get("LANTERN_RYU_COMMAND"):
+            command = shlex.split(os.environ["LANTERN_RYU_COMMAND"]) + command
         environment = dict(
             os.environ,
             PYTHONPATH=REPO_ROOT,
@@ -80,6 +84,7 @@ class Controller:
             LANTERN_CASE=self.case,
             LANTERN_TRIAL=str(self.trial),
             LANTERN_DETECTOR_MODE=self.detector_mode,
+            LANTERN_POLICY=self.policy,
         )
         if self.topology_size:
             environment["LANTERN_TOPOLOGY_SIZE"] = str(self.topology_size)
@@ -294,7 +299,11 @@ class Workload:
         from experiments.validation import read_events, receiver_healthy
 
         paths = {name: prefix + "_receiver_" + name + ".jsonl" for name in config.HOSTS}
-        deadline = time.monotonic() + 7
+        # A 20-host run starts forty receiver/service processes.  Native WSL
+        # can take longer to schedule all Scapy sniffers; this is startup
+        # allowance only.  Receiver readiness and five-packet health checks
+        # remain mandatory and unchanged.
+        deadline = time.monotonic() + 20
         while True:
             self.assert_alive()
             if all(os.path.exists(p) and any(e.get("ready") for e in read_events(p))
@@ -312,14 +321,14 @@ class Workload:
             process = sender.popen(["python3", "-c", code], cwd=REPO_ROOT,
                                    stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
             try:
-                output, _ = process.communicate(timeout=5)
+                output, _ = process.communicate(timeout=20)
             except subprocess.TimeoutExpired:
                 process.kill()
                 process.communicate()
                 raise RuntimeError("receiver health sender timeout: " + name)
             if process.returncode:
                 raise RuntimeError("receiver health sender failed: " + name)
-            deadline = time.monotonic() + 5
+            deadline = time.monotonic() + 20
             while not receiver_healthy(read_events(paths[name])):
                 self.assert_alive()
                 if time.monotonic() >= deadline:

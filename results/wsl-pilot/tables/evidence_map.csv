@@ -1,0 +1,4 @@
+result_table,phase,cohort,attack_class,detector,runs
+coverage.csv,control,primary,lateral,baseline,control-C5-native-linux-startup20_trial01
+coverage.csv,control,primary,lateral,graph,control-C5-native-linux-startup20_trial01
+coverage.csv,control,primary,lateral,hybrid,control-C5-native-linux-startup20_trial01

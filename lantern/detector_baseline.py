@@ -5,6 +5,7 @@ baseline, not all per-flow methods or the entire surveyed literature.
 """
 
 import time
+from collections import defaultdict, deque
 
 from lantern import config
 from lantern.alerts import (
@@ -33,8 +34,8 @@ class BaselineDetector:
         # Source -> cumulative set of destinations first contacted during the
         # run. This is the requested control baseline: unlike the graph model
         # it has no topology or learned profile, only a cumulative count.
-        self._seen_destinations = {}
-        self._lateral_reported = set()
+        self._destination_history = defaultdict(deque)
+        self._lateral_active = set()
         self.last_compute_seconds = 0.0
 
     def detect(self, window):
@@ -54,19 +55,23 @@ class BaselineDetector:
     def _detect_cumulative_lateral(self, window):
         """Control rule: label a source after N distinct new destinations.
 
-        Destinations are added only after scoring the current window. The
-        first crossing emits one alert per source, making the rule cumulative
-        across windows while keeping alert counts comparable with the graph
-        detector's cooldown semantics.
+        Destinations are retained for a bounded number of windows. The first
+        threshold crossing emits one alert per source; a later crossing after
+        the source falls below threshold is eligible to alert again.
         """
         alerts = []
         for host in window.hosts.values():
-            seen = self._seen_destinations.setdefault(host.host, set())
-            new = set(host.initiated_hosts) - seen
-            cumulative = seen | new
+            history = self._destination_history[host.host]
+            prior = set().union(*(destinations for _, destinations in history)) if history else set()
+            new = set(host.initiated_hosts) - prior
+            history.append((window.index, set(host.initiated_hosts)))
+            minimum = window.index - self.cfg.CUMULATIVE_LATERAL_HISTORY_WINDOWS + 1
+            while history and history[0][0] < minimum:
+                history.popleft()
+            cumulative = set().union(*(destinations for _, destinations in history)) if history else set()
             if (
                 len(cumulative) >= self.cfg.CUMULATIVE_NEW_DESTINATIONS
-                and host.host not in self._lateral_reported
+                and host.host not in self._lateral_active
             ):
                 alerts.append(
                     Alert(
@@ -86,8 +91,9 @@ class BaselineDetector:
                         },
                     )
                 )
-                self._lateral_reported.add(host.host)
-            seen.update(new)
+                self._lateral_active.add(host.host)
+            elif len(cumulative) < self.cfg.CUMULATIVE_NEW_DESTINATIONS:
+                self._lateral_active.discard(host.host)
         return alerts
 
     # ------------------------------------------------------------------

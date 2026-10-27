@@ -1,0 +1,4 @@
+case,trial,phase,mitigator,policy,detector_mode,topology_size,window_seconds,profile_alpha,run,detector,attacks,detected,class_exact,candidate_alerts,matched_candidates,ambiguous_candidates,unmatched_candidates,candidate_precision,operational_alerts,benign_host_windows,false_positive_host_windows,false_positive_rate
+C5,1,control,none,class,both,20,10.0,0.2,control-C5-native-linux-startup20_trial01,baseline,1,1,1,1,1,0,0,1.0,3,149,0,0.0
+C5,1,control,none,class,both,20,10.0,0.2,control-C5-native-linux-startup20_trial01,graph,1,1,1,2,2,0,0,1.0,1,149,0,0.0
+C5,1,control,none,class,both,20,10.0,0.2,control-C5-native-linux-startup20_trial01,hybrid,1,0,0,0,0,0,0,,0,149,0,0.0

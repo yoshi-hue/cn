@@ -49,6 +49,7 @@ def run_trial(
     window_seconds=None,
     profile_alpha=None,
     cumulative_lateral=False,
+    policy="class",
 ):
     if topology_size is not None:
         config.configure_topology(topology_size)
@@ -78,6 +79,12 @@ def run_trial(
         benign=benign,
         warmup=warmup,
         observation=observation,
+        detector_mode=detector_mode,
+        topology_size=len(config.HOSTS),
+        window_seconds=config.WINDOW_SECONDS,
+        profile_alpha=config.PROFILE_ALPHA,
+        cumulative_lateral=config.CUMULATIVE_LATERAL_ENABLED,
+        policy=policy,
         started_wall=time.time(),
     )
     meta_path = Path(log).with_suffix(".meta.json")
@@ -86,6 +93,7 @@ def run_trial(
         label, trial, mitigator, log, detector_mode=detector_mode,
         topology_size=topology_size, window_seconds=window_seconds,
         profile_alpha=profile_alpha, cumulative_lateral=cumulative_lateral,
+        policy=policy,
     )
     net = workload = None
     reasons = []
@@ -100,10 +108,15 @@ def run_trial(
         net.staticArp()
         time.sleep(3)
         for name in list(config.WORKSTATIONS) + [config.ATTACKER]:
-            output = net.get(name).cmd(
-                "ping -c 1 -W 2 " + config.HOST_TO_IP[config.APP_SERVER]
-            )
-            if " 0% packet loss" not in output:
+            target = config.HOST_TO_IP[config.APP_SERVER]
+            connected = False
+            for _attempt in range(3):
+                output = net.get(name).cmd("ping -c 1 -W 2 " + target)
+                if " 0% packet loss" in output:
+                    connected = True
+                    break
+                time.sleep(1)
+            if not connected:
                 raise RuntimeError("connectivity failed for " + name)
         workload = Workload(net, label, trial)
         workload.controller = controller
@@ -178,6 +191,7 @@ def main():
     parser.add_argument("--window-seconds", type=float)
     parser.add_argument("--profile-alpha", type=float)
     parser.add_argument("--cumulative-lateral", action="store_true")
+    parser.add_argument("--policy", choices=config.MITIGATION_POLICY_MODES, default="class")
     args = parser.parse_args()
     from mininet.log import setLogLevel
 
