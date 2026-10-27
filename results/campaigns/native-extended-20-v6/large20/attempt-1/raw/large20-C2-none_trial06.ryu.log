@@ -1,0 +1,7 @@
+loading app lantern.app
+loading app ryu.controller.ofp_handler
+instantiating app lantern.app of LanternIDS
+Lantern started: case=large20-C2-none trial=6 mitigator=none log=/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/campaigns/native-extended-20-v6/large20/attempt-1/raw/large20-C2-none_trial06.jsonl
+instantiating app ryu.controller.ofp_handler of OFPHandler
+switch 0000000000000001 connected
+switch 0000000000000002 connected
