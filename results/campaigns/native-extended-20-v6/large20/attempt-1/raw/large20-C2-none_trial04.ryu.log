@@ -1,0 +1,13 @@
+loading app lantern.app
+loading app ryu.controller.ofp_handler
+instantiating app lantern.app of LanternIDS
+Lantern started: case=large20-C2-none trial=4 mitigator=none log=/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/campaigns/native-extended-20-v6/large20/attempt-1/raw/large20-C2-none_trial04.jsonl
+instantiating app ryu.controller.ofp_handler of OFPHandler
+switch 0000000000000001 connected
+switch 0000000000000002 connected
+ALERT [baseline] portscan src=10.0.0.1 score=7.00 -- 7 distinct destination hosts (> 4)  (scoring only, not actuating)
+ALERT [baseline] portscan src=10.0.0.4 score=60.00 -- 60 distinct destination ports (> 6)  (scoring only, not actuating)
+ALERT [baseline] bruteforce src=10.0.0.4 score=3.00 -- 3 connection attempts to an authentication port (> 1)  (scoring only, not actuating)
+ALERT [graph] graph_anomaly src=10.0.0.4 score=8.40 -- used 60 distinct ports; unusual traffic volume across its peers; contacted 2 hosts  (scoring only, not actuating)
+ALERT [baseline] portscan src=10.0.0.4 score=84.00 -- 84 distinct destination ports (> 6)  (scoring only, not actuating)
+ALERT [baseline] bruteforce src=10.0.0.4 score=5.00 -- 5 connection attempts to an authentication port (> 1)  (scoring only, not actuating)
