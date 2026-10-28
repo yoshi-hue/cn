@@ -1,0 +1,34 @@
+/usr/local/lib/python3.14/dist-packages/scapy/layers/ipsec.py:512: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  cipher=algorithms.TripleDES,
+/usr/local/lib/python3.14/dist-packages/scapy/layers/ipsec.py:516: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  cipher=algorithms.TripleDES,
+10.0.0.1 t=6.8s sent=10
+10.0.0.1 t=14.6s sent=20
+10.0.0.1 t=21.7s sent=30
+10.0.0.1 t=29.0s sent=40
+10.0.0.1 t=36.9s sent=50
+10.0.0.1 t=44.3s sent=60
+10.0.0.1 t=52.0s sent=70
+10.0.0.1 t=59.8s sent=80
+10.0.0.1 t=67.0s sent=90
+10.0.0.1 t=75.1s sent=100
+10.0.0.1 t=82.6s sent=110
+10.0.0.1 t=89.8s sent=120
+10.0.0.1 t=97.2s sent=130
+10.0.0.1 t=104.5s sent=140
+10.0.0.1 t=111.2s sent=150
+10.0.0.1 t=118.5s sent=160
+10.0.0.1 t=126.0s sent=170
+10.0.0.1 t=133.2s sent=180
+10.0.0.1 t=140.5s sent=190
+WARNING: Mac address to reach destination not found. Using broadcast.
+10.0.0.1 t=1200.3s sent=200
+10.0.0.1 t=1207.2s sent=210
+10.0.0.1 t=1214.4s sent=220
+10.0.0.1 t=1221.6s sent=230
+10.0.0.1 t=1228.9s sent=240
+10.0.0.1 t=1236.3s sent=250
+10.0.0.1 t=1243.3s sent=260
+10.0.0.1 t=1250.1s sent=270
+10.0.0.1 t=1257.7s sent=280
+normal: 10.0.0.1 sent 286 exchanges over 0s

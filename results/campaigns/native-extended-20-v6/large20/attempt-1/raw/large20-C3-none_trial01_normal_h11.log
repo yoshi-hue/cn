@@ -1,0 +1,33 @@
+/usr/local/lib/python3.14/dist-packages/scapy/layers/ipsec.py:512: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  cipher=algorithms.TripleDES,
+/usr/local/lib/python3.14/dist-packages/scapy/layers/ipsec.py:516: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  cipher=algorithms.TripleDES,
+10.0.0.21 t=7.5s sent=10
+10.0.0.21 t=14.9s sent=20
+10.0.0.21 t=22.3s sent=30
+10.0.0.21 t=29.4s sent=40
+10.0.0.21 t=37.0s sent=50
+10.0.0.21 t=44.7s sent=60
+10.0.0.21 t=51.8s sent=70
+10.0.0.21 t=59.4s sent=80
+10.0.0.21 t=66.6s sent=90
+10.0.0.21 t=73.7s sent=100
+10.0.0.21 t=80.8s sent=110
+10.0.0.21 t=88.1s sent=120
+10.0.0.21 t=95.7s sent=130
+10.0.0.21 t=103.3s sent=140
+10.0.0.21 t=110.3s sent=150
+10.0.0.21 t=117.6s sent=160
+10.0.0.21 t=125.5s sent=170
+10.0.0.21 t=133.1s sent=180
+10.0.0.21 t=141.2s sent=190
+10.0.0.21 t=149.2s sent=200
+10.0.0.21 t=157.5s sent=210
+10.0.0.21 t=165.0s sent=220
+10.0.0.21 t=172.6s sent=230
+10.0.0.21 t=180.0s sent=240
+10.0.0.21 t=187.1s sent=250
+10.0.0.21 t=195.0s sent=260
+10.0.0.21 t=201.7s sent=270
+10.0.0.21 t=209.1s sent=280
+normal: 10.0.0.21 sent 287 exchanges over 0s

@@ -1,0 +1,6 @@
+    [dos.py] /usr/local/lib/python3.14/dist-packages/scapy/layers/ipsec.py:512: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+    [dos.py]   cipher=algorithms.TripleDES,
+    [dos.py] /usr/local/lib/python3.14/dist-packages/scapy/layers/ipsec.py:516: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+    [dos.py]   cipher=algorithms.TripleDES,
+    [dos.py] dos: 10.0.0.4 -> 10.0.0.10:80, 10200 packets, 255 pps achieved
+{"log": "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/campaigns/native-extended-20-v6/large20/attempt-1/raw/large20-C3-none_trial05.jsonl", "valid": true, "reasons": [], "expected_attacks": 1, "observed_attacks": 1, "scoring_windows": 15}

@@ -1,0 +1,8 @@
+{"kind": "probe", "wall": 1793156264.0347733, "src": "10.0.0.23", "dst": "10.0.0.10", "success": true, "error": null, "latency": 0.28050050199817633}
+{"kind": "probe", "wall": 1793156266.0354762, "src": "10.0.0.23", "dst": "10.0.0.10", "success": true, "error": null, "latency": 0.3693903019957361}
+{"kind": "probe", "wall": 1793156268.038712, "src": "10.0.0.23", "dst": "10.0.0.10", "success": true, "error": null, "latency": 0.08428119999734918}
+{"kind": "probe", "wall": 1793156270.045989, "src": "10.0.0.23", "dst": "10.0.0.10", "success": false, "error": "URLError", "latency": 1.1756991049987846}
+{"kind": "probe", "wall": 1793156272.0469892, "src": "10.0.0.23", "dst": "10.0.0.10", "success": true, "error": null, "latency": 0.7361748029943556}
+{"kind": "probe", "wall": 1793156274.0822732, "src": "10.0.0.23", "dst": "10.0.0.10", "success": true, "error": null, "latency": 0.3689163989984081}
+{"kind": "probe", "wall": 1793156276.0829403, "src": "10.0.0.23", "dst": "10.0.0.10", "success": true, "error": null, "latency": 0.028933299996424466}
+{"kind": "probe", "wall": 1793156278.0830643, "src": "10.0.0.23", "dst": "10.0.0.10", "success": true, "error": null, "latency": 0.01321470000402769}
