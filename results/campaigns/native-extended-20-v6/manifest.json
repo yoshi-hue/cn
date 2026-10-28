@@ -2,8 +2,8 @@
   "schema_version": 2,
   "created": "2026-10-27T14:17:43.871171+00:00",
   "revision": null,
-  "source_hash": "268b140856db2efaa11a108f38149c8087a4861db36fdfded22e3167ee2b816b",
-  "working_tree": "source archive (no Git metadata)",
+  "source_hash": "2a28d7b39e138baa2f97b0ae558c4e0a212cf451ebd2a2ef6227897de40e876b",
+  "working_tree": "native campaign driver updated to bypass Docker image check",
   "image_id": "sha256:86e9859356ddb015ec332f7c15f2bbab6c53c47f18130500455de25ad635a202",
   "image_digests": [
     "lantern-sdn-ids@sha256:86e9859356ddb015ec332f7c15f2bbab6c53c47f18130500455de25ad635a202"

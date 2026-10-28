@@ -83,3 +83,14 @@ Traceback (most recent call last):
 RuntimeError: two attempts failed; inspect /mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/campaigns/native-extended-20-v6/large20/attempt-2/raw/large20-C4-none_trial20.jsonl
 frozen thresholds: {"PORTSCAN_PORTS": 6, "PORTSCAN_HOSTS": 4, "DOS_PPS": 20, "BRUTEFORCE_ATTEMPTS": 1, "GRAPH_SCORE_THRESHOLD": 5}
 [60/545] large20-C4-none trial 20 attempt 1
+[61/545] large20-C5-none trial 1 attempt 1
+  invalid attempt retained
+[61/545] large20-C5-none trial 1 attempt 2
+Terminated                 python3 -m experiments.campaign extended --campaign "$CAMPAIGN"
+frozen thresholds: {"PORTSCAN_PORTS": 6, "PORTSCAN_HOSTS": 4, "DOS_PPS": 20, "BRUTEFORCE_ATTEMPTS": 1, "GRAPH_SCORE_THRESHOLD": 5}
+[61/545] large20-C5-none trial 1 attempt 1
+Terminated                 python3 -m experiments.campaign extended --campaign "$CAMPAIGN"
+frozen thresholds: {"PORTSCAN_PORTS": 6, "PORTSCAN_HOSTS": 4, "DOS_PPS": 20, "BRUTEFORCE_ATTEMPTS": 1, "GRAPH_SCORE_THRESHOLD": 5}
+Terminated                 python3 -m experiments.campaign extended --campaign "$CAMPAIGN"
+frozen thresholds: {"PORTSCAN_PORTS": 6, "PORTSCAN_HOSTS": 4, "DOS_PPS": 20, "BRUTEFORCE_ATTEMPTS": 1, "GRAPH_SCORE_THRESHOLD": 5}
+[61/545] large20-C5-none trial 1 attempt 2

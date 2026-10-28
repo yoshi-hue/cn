@@ -168,6 +168,10 @@ def verify_source(directory, check_image=True):
         raise RuntimeError(
             "source changed since campaign creation; create a new campaign"
         )
+    # Native WSL runs use the host's Mininet/OVS and native Ryu; they do not
+    # require the Docker daemon or image. Keep the image check for container
+    # campaigns, while allowing native campaigns to proceed offline.
+    check_image = check_image and os.environ.get("LANTERN_NATIVE") != "1"
     if check_image:
         current = json.loads(command_output(["docker", "image", "inspect", IMAGE]))[0][
             "Id"
@@ -197,7 +201,7 @@ def execute(directory, runs, frozen=None):
             raw.mkdir(parents=True, exist_ok=True)
             # Native Mininet runs can leave a namespace/veth behind after an
             # invalid startup. Clear only Mininet's own state before retrying.
-            if os.environ.get("LANTERN_NATIVE") == "1":
+            if os.environ.get("LANTERN_NATIVE") == "1" and os.environ.get("LANTERN_NATIVE_CLEAN") == "1":
                 subprocess.run(
                     ["mn", "-c"],
                     stdout=subprocess.DEVNULL,
