@@ -5,3 +5,6 @@ Lantern started: case=large20-C4-none trial=20 mitigator=none log=/mnt/c/Users/M
 instantiating app ryu.controller.ofp_handler of OFPHandler
 switch 0000000000000001 connected
 switch 0000000000000002 connected
+ALERT [baseline] portscan src=10.0.0.1 score=8.00 -- 8 distinct destination hosts (> 4)  (scoring only, not actuating)
+ALERT [baseline] bruteforce src=10.0.0.4 score=58.00 -- 58 connection attempts to an authentication port (> 1)  (scoring only, not actuating)
+ALERT [baseline] bruteforce src=10.0.0.4 score=76.00 -- 76 connection attempts to an authentication port (> 1)  (scoring only, not actuating)
