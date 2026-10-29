@@ -20,7 +20,10 @@ run it before anything else.
 """
 
 import argparse
+import os
+import re
 import sys
+import zlib
 
 from mininet.log import setLogLevel, info
 from mininet.net import Mininet
@@ -56,12 +59,22 @@ class LanternTopo(Topo):
     # every link setup, which buried real errors in the run logs.
 
     def build(self):
+        worker_prefix = os.environ.get("LANTERN_WORKER_PREFIX", "")
+        if worker_prefix and not re.fullmatch(r"[A-Za-z0-9_]+", worker_prefix):
+            raise ValueError("invalid LANTERN_WORKER_PREFIX")
+
+        def physical(logical):
+            return worker_prefix + logical if worker_prefix else logical
+
         switch_dpids = {}
+        worker_offset = zlib.crc32(worker_prefix.encode()) & 0xFFFF
         for index, name in enumerate(config.SWITCHES, start=1):
-            switch_dpids[name] = self.addSwitch(name, dpid="%016x" % index)
+            switch_dpids[name] = self.addSwitch(
+                physical(name), dpid="%016x" % (index + worker_offset * 16)
+            )
 
         for host_name, (ip, mac, switch, _role) in config.HOSTS.items():
-            host = self.addHost(host_name, ip="%s/24" % ip, mac=mac)
+            host = self.addHost(physical(host_name), ip="%s/24" % ip, mac=mac)
             self.addLink(host, switch_dpids[switch])
 
         for left, right in config.SWITCH_LINKS:
@@ -86,6 +99,12 @@ def build_network(controller_ip=None, controller_port=None):
         ip=controller_ip,
         port=controller_port,
     )
+    worker_prefix = os.environ.get("LANTERN_WORKER_PREFIX", "")
+    if worker_prefix:
+        # Keep the experiment code's logical names while the OS/OVS names are
+        # unique across workers sharing one WSL instance.
+        for logical in list(config.HOSTS) + list(config.SWITCHES):
+            net.nameToNode[logical] = net.nameToNode[worker_prefix + logical]
     return net
 
 

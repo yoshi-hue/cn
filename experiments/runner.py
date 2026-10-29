@@ -303,7 +303,10 @@ class Workload:
         # can take longer to schedule all Scapy sniffers; this is startup
         # allowance only.  Receiver readiness and five-packet health checks
         # remain mandatory and unchanged.
-        deadline = time.monotonic() + 20
+        # A 20-host run starts roughly forty receiver/service processes.  On
+        # the four-core Docker runner, process startup can legitimately take
+        # over twenty seconds even when every receiver is healthy.
+        deadline = time.monotonic() + float(os.environ.get("LANTERN_RECEIVER_STARTUP_TIMEOUT", "120"))
         while True:
             self.assert_alive()
             if all(os.path.exists(p) and any(e.get("ready") for e in read_events(p))

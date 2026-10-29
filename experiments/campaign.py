@@ -78,20 +78,31 @@ def container_command(run, raw, frozen=None):
         if frozen:
             command.insert(1, "LANTERN_CONFIG=" + str(frozen))
     else:
+        docker_cli = os.environ.get("LANTERN_DOCKER", "docker")
+        volume_root = str(ROOT)
+        if docker_cli.lower().endswith(".exe") and os.name != "nt":
+            volume_root = subprocess.check_output(
+                ["wslpath", "-w", str(ROOT)], text=True
+            ).strip()
         command = [
-            "docker",
+            docker_cli,
             "run",
             "--rm",
             "--privileged",
             "--network",
             "none",
+            "-w",
+            "/opt/lantern",
             "-v",
-            str(ROOT) + ":/opt/lantern",
+            volume_root + ":/opt/lantern",
             "-e",
-            "LANTERN_RAW=" + str(raw.relative_to(ROOT)),
+            "LANTERN_RAW=" + str(raw.relative_to(ROOT)).replace("\\", "/"),
         ]
         if frozen:
-            command += ["-e", "LANTERN_CONFIG=" + str(frozen.relative_to(ROOT))]
+            command += [
+                "-e",
+                "LANTERN_CONFIG=" + str(frozen.relative_to(ROOT)).replace("\\", "/"),
+            ]
         command += [IMAGE, "python3", "-m", "experiments.run_case"]
     flag_names = {
         "topology_size": "topology-size",
@@ -187,7 +198,7 @@ def execute(directory, runs, frozen=None):
     for number, run in enumerate(runs, 1):
         verify_source(directory)
         success = False
-        for attempt in range(1, 3):
+        for attempt in range(1, 6):
             # Separate directories retain every attempt. Existing successful
             # attempts are resumable; a partially written attempt is never reused.
             raw = directory / run["phase"] / ("attempt-%d" % attempt) / "raw"
@@ -239,6 +250,13 @@ def execute(directory, runs, frozen=None):
             print("  invalid attempt retained", flush=True)
         if not success:
             raise RuntimeError("two attempts failed; inspect " + str(log))
+        if (
+            os.environ.get("LANTERN_STOP_AFTER_CONTROL_C5") == "1"
+            and run.get("label") == "control20-C5-none"
+            and run.get("trial") == 20
+        ):
+            print("control C5 trial 20 complete; stopping at requested boundary", flush=True)
+            return records
     verify_source(directory)
     return records
 
