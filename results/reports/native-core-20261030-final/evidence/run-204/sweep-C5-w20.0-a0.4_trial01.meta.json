@@ -1,0 +1,22 @@
+{
+  "case": "C5",
+  "trial": 1,
+  "mitigator": "none",
+  "seed": 40001,
+  "phase": "sweep",
+  "measurement_protocol_version": 2,
+  "reverse": false,
+  "benign": false,
+  "warmup": 255.0,
+  "observation": 60,
+  "detector_mode": "both",
+  "topology_size": 6,
+  "window_seconds": 20.0,
+  "profile_alpha": 0.4,
+  "cumulative_lateral": false,
+  "policy": "class",
+  "started_wall": 1793311453.3371277,
+  "evaluation_start": 1793311729.2749038,
+  "recovery_start": 1793311753.3487113,
+  "ended_wall": 1793311800.3516479
+}

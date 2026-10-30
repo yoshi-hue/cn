@@ -1,0 +1,22 @@
+{
+  "case": "C3",
+  "trial": 17,
+  "mitigator": "hybrid",
+  "seed": 50017,
+  "phase": "hybrid",
+  "measurement_protocol_version": 2,
+  "reverse": false,
+  "benign": false,
+  "warmup": 135.0,
+  "observation": 60,
+  "detector_mode": "hybrid",
+  "topology_size": 20,
+  "window_seconds": 10.0,
+  "profile_alpha": 0.2,
+  "cumulative_lateral": true,
+  "policy": "class",
+  "started_wall": 1793285523.558412,
+  "evaluation_start": 1793285734.9234114,
+  "recovery_start": 1793285776.6598463,
+  "ended_wall": 1793285826.866475
+}

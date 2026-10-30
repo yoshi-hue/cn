@@ -117,7 +117,7 @@ class Controller:
             )
         return self
 
-    def stop(self, grace=8.0):
+    def stop(self, grace=30.0):
         """Interrupt rather than terminate.
 
         Ryu only runs its applications' close() hooks on KeyboardInterrupt, so
@@ -315,8 +315,15 @@ class Workload:
             if time.monotonic() >= deadline:
                 raise RuntimeError("receiver readiness timeout")
             time.sleep(0.1)
-        for name, (ip, _, _, _) in config.HOSTS.items():
-            sender = self.net.get("h1" if name != "h1" else "h2")
+        # Do not send every health packet from h1.  On larger topologies that
+        # synthetic check looks exactly like a port scan to the detector; the
+        # resulting source block prevents later health and service probes from
+        # reaching their receivers.  Give each target one distinct sender so
+        # no sender creates a multi-destination scan during the check.
+        host_names = list(config.HOSTS)
+        for index, (name, (ip, _, _, _)) in enumerate(config.HOSTS.items()):
+            sender_name = host_names[(index + 1) % len(host_names)]
+            sender = self.net.get(sender_name)
             code = (
                 'from scapy.all import IP, UDP, send; '
                 'send(IP(dst=%r,tos=32)/UDP(dport=29999),count=5,inter=0.02,verbose=False)' % ip
@@ -331,7 +338,9 @@ class Workload:
                 raise RuntimeError("receiver health sender timeout: " + name)
             if process.returncode:
                 raise RuntimeError("receiver health sender failed: " + name)
-            deadline = time.monotonic() + 20
+            deadline = time.monotonic() + float(
+                os.environ.get("LANTERN_RECEIVER_HEALTH_TIMEOUT", "20")
+            )
             while not receiver_healthy(read_events(paths[name])):
                 self.assert_alive()
                 if time.monotonic() >= deadline:

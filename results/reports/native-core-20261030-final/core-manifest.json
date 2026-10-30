@@ -1,0 +1,17 @@
+﻿{
+    "report":  "core-results-report.md",
+    "scope":  "225-run core",
+    "valid_unique":  225,
+    "historical":  100,
+    "hybrid":  80,
+    "sensitivity":  45,
+    "policy_planned":  80,
+    "policy_started":  0,
+    "evidence_root":  "evidence",
+    "analysis_root":  "tables",
+    "figures_root":  "figures",
+    "generated":  "2026-10-30 Asia/Kolkata",
+    "analysis_command":  "python -m experiments.analyze --raw results/reports/native-core-20261030-final/evidence --output results/reports/native-core-20261030-final/tables",
+    "source_campaign":  "results/campaigns/native-extended-20-v6-continuation-20261029-r9-core",
+    "repair_campaign":  "results/campaigns/native-extended-20-v6-continuation-20261029-repair-C5-trial10"
+}

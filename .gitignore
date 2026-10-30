@@ -25,3 +25,5 @@ results/campaigns/
 results/analysis/
 output/
 tmp/
+# Intermediate report staging; the curated final package is committed separately.
+results/reports/native-core-20261030/

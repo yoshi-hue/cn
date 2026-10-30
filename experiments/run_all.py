@@ -82,6 +82,38 @@ def extended_plan(trials=20, warmup=WARMUP_SECONDS):
     return runs
 
 
+def continuation_plan(trials=20):
+    """The explicit 205-run continuation; never includes C2--C4 policy arms."""
+    extended = extended_plan(trials)
+    selected = []
+    for run in extended:
+        if run["phase"] == "hybrid":
+            selected.append(run)
+        elif run["phase"] == "sweep":
+            selected.append(run)
+        elif (
+            run["phase"] == "policy"
+            and run["case"] == "C5"
+            and run["policy"] in ("source", "pair")
+            and run["mitigator"] in ("baseline", "graph")
+        ):
+            selected.append(run)
+    # The continuation has an explicit execution order so a resumed campaign
+    # cannot begin with policy runs from the generic extended matrix.
+    selected.sort(key=lambda run: {"hybrid": 0, "sweep": 1, "policy": 2}[run["phase"]])
+    expected = 80 + 45 + 80
+    identities = [
+        (r["phase"], r["case"], r["mitigator"], r.get("policy", "class"),
+         r["trial"], r["seed"], r.get("window_seconds"), r.get("profile_alpha"))
+        for r in selected
+    ]
+    if len(selected) != expected or len(set(identities)) != expected:
+        raise RuntimeError("continuation plan is not exactly 205 unique runs")
+    if any(r["phase"] == "policy" and r["case"] != "C5" for r in selected):
+        raise RuntimeError("continuation plan contains an excluded policy case")
+    return selected
+
+
 def main():
     parser = argparse.ArgumentParser(__doc__)
     parser.add_argument("--trials", type=int, default=20)

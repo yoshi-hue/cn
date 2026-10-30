@@ -213,136 +213,24 @@ Traceback (most recent call last):
   File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 241, in execute
     raise RuntimeError("two attempts failed; inspect " + str(log))
 RuntimeError: two attempts failed; inspect /mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/campaigns/native-extended-20-v6/control/attempt-2/raw/control20-C5-none_trial09.jsonl
-  invalid attempt retained
 Traceback (most recent call last):
   File "<frozen runpy>", line 198, in _run_module_as_main
   File "<frozen runpy>", line 88, in _run_code
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 424, in <module>
+  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 448, in <module>
     main()
     ~~~~^^
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 406, in main
+  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 430, in main
     records = execute(directory, extended_plan(20), frozen)
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 241, in execute
-    raise RuntimeError("two attempts failed; inspect " + str(log))
-RuntimeError: two attempts failed; inspect /mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/campaigns/native-extended-20-v6/control/attempt-2/raw/control20-C5-none_trial09.jsonl
-Terminated                 python3 -m experiments.campaign extended --campaign "$CAMPAIGN"
-frozen thresholds: {"PORTSCAN_PORTS": 6, "PORTSCAN_HOSTS": 4, "DOS_PPS": 20, "BRUTEFORCE_ATTEMPTS": 1, "GRAPH_SCORE_THRESHOLD": 5}
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 424, in <module>
-    main()
-    ~~~~^^
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 406, in main
-    records = execute(directory, extended_plan(20), frozen)
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 241, in execute
-    raise RuntimeError("two attempts failed; inspect " + str(log))
-RuntimeError: two attempts failed; inspect /mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/campaigns/native-extended-20-v6/control/attempt-2/raw/control20-C5-none_trial09.jsonl
-frozen thresholds: {"PORTSCAN_PORTS": 6, "PORTSCAN_HOSTS": 4, "DOS_PPS": 20, "BRUTEFORCE_ATTEMPTS": 1, "GRAPH_SCORE_THRESHOLD": 5}
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 424, in <module>
-    main()
-    ~~~~^^
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 406, in main
-    records = execute(directory, extended_plan(20), frozen)
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 241, in execute
-    raise RuntimeError("two attempts failed; inspect " + str(log))
-RuntimeError: two attempts failed; inspect /mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/campaigns/native-extended-20-v6/control/attempt-2/raw/control20-C5-none_trial09.jsonl
-frozen thresholds: {"PORTSCAN_PORTS": 6, "PORTSCAN_HOSTS": 4, "DOS_PPS": 20, "BRUTEFORCE_ATTEMPTS": 1, "GRAPH_SCORE_THRESHOLD": 5}
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 424, in <module>
-    main()
-    ~~~~^^
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 406, in main
-    records = execute(directory, extended_plan(20), frozen)
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 241, in execute
-    raise RuntimeError("two attempts failed; inspect " + str(log))
-RuntimeError: two attempts failed; inspect /mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/campaigns/native-extended-20-v6/control/attempt-2/raw/control20-C5-none_trial09.jsonl
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 426, in <module>
-    main()
-    ~~~~^^
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 411, in main
-    calibrate(directory, args.topology_size)
-    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 265, in calibrate
-    execute(directory, runs)
-    ~~~~~~~^^^^^^^^^^^^^^^^^
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 185, in execute
+  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 196, in execute
     verify_source(directory)
     ~~~~~~~~~~~~~^^^^^^^^^^^
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 168, in verify_source
+  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 179, in verify_source
     raise RuntimeError(
         "source changed since campaign creation; create a new campaign"
     )
 RuntimeError: source changed since campaign creation; create a new campaign
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 426, in <module>
-    main()
-    ~~~~^^
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 411, in main
-    calibrate(directory, args.topology_size)
-    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 265, in calibrate
-    execute(directory, runs)
-    ~~~~~~~^^^^^^^^^^^^^^^^^
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 185, in execute
-    verify_source(directory)
-    ~~~~~~~~~~~~~^^^^^^^^^^^
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 168, in verify_source
-    raise RuntimeError(
-        "source changed since campaign creation; create a new campaign"
-    )
-RuntimeError: source changed since campaign creation; create a new campaign
-frozen thresholds: {"PORTSCAN_PORTS": 6, "PORTSCAN_HOSTS": 4, "DOS_PPS": 20, "BRUTEFORCE_ATTEMPTS": 1, "GRAPH_SCORE_THRESHOLD": 5}
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 426, in <module>
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 408, in main
-    frozen = directory / "thresholds.json"
-              ~~~~~~~~~^~~~~~~~~~~~~~~~~~~
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 188, in execute
-    verify_source(directory)
-        ~~~~~~~~~^^^^^^^^^^^
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 168, in verify_source
-        manifest["source_hash"] != source_hash()
-        and os.environ.get("LANTERN_ALLOW_SOURCE_DRIFT") != "1"
-    ):
-RuntimeError: source changed since campaign creation; create a new campaign
-frozen thresholds: {"PORTSCAN_PORTS": 6, "PORTSCAN_HOSTS": 4, "DOS_PPS": 20, "BRUTEFORCE_ATTEMPTS": 1, "GRAPH_SCORE_THRESHOLD": 5}
-[89/545] control20-C5-none trial 9 attempt 3
+[101/545] policy20-baseline-source-C2 trial 1 attempt 8
   invalid attempt retained
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 429, in <module>
-    main()
-    ~~~~^^
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 411, in main
-    records = execute(directory, extended_plan(20), frozen)
-  File "/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/experiments/campaign.py", line 246, in execute
-    raise RuntimeError("three attempts failed; inspect " + str(log))
-RuntimeError: three attempts failed; inspect /mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/campaigns/native-extended-20-v6/control/attempt-3/raw/control20-C5-none_trial09.jsonl
-{"run": {"case": "C5", "phase": "control", "mitigator": "none", "trial": 12, "seed": 35012, "warmup": 135.0, "topology_size": 20, "cumulative_lateral": true, "label": "control20-C5-none"}, "attempt": 1, "command": ["env", "LANTERN_CONFIG=/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/campaigns/native-extended-20-v6/thresholds.json", "LANTERN_RAW=/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/campaigns/native-extended-20-v6/control/attempt-1/raw", "python3", "-m", "experiments.run_case", "--case", "C5", "--phase", "control", "--mitigator", "none", "--trial", "12", "--seed", "35012", "--warmup", "135.0", "--topology-size", "20", "--cumulative-lateral", "--label", "control20-C5-none"], "seconds": 269.92695355415344, "exit_code": 1}
-{"run": {"case": "C5", "phase": "control", "mitigator": "none", "trial": 12, "seed": 35012, "warmup": 135.0, "topology_size": 20, "cumulative_lateral": true, "label": "control20-C5-none"}, "attempt": 2, "command": ["env", "LANTERN_CONFIG=/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/campaigns/native-extended-20-v6/thresholds.json", "LANTERN_RAW=/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/campaigns/native-extended-20-v6/control/attempt-2/raw", "python3", "-m", "experiments.run_case", "--case", "C5", "--phase", "control", "--mitigator", "none", "--trial", "12", "--seed", "35012", "--warmup", "135.0", "--topology-size", "20", "--cumulative-lateral", "--label", "control20-C5-none"], "seconds": 261.53408312797546, "exit_code": 1}
-{"run": {"case": "C5", "phase": "control", "mitigator": "none", "trial": 12, "seed": 35012, "warmup": 135.0, "topology_size": 20, "cumulative_lateral": true, "label": "control20-C5-none"}, "attempt": 3, "command": ["env", "LANTERN_CONFIG=/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/campaigns/native-extended-20-v6/thresholds.json", "LANTERN_RAW=/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/campaigns/native-extended-20-v6/control/attempt-3/raw", "python3", "-m", "experiments.run_case", "--case", "C5", "--phase", "control", "--mitigator", "none", "--trial", "12", "--seed", "35012", "--warmup", "135.0", "--topology-size", "20", "--cumulative-lateral", "--label", "control20-C5-none"], "seconds": 254.93255925178528, "exit_code": 0}
-{"run": {"case": "C5", "phase": "control", "mitigator": "none", "trial": 14, "seed": 35014, "warmup": 135.0, "topology_size": 20, "cumulative_lateral": true, "label": "control20-C5-none"}, "attempt": 1, "command": ["env", "LANTERN_CONFIG=/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/campaigns/native-extended-20-v6/thresholds.json", "LANTERN_RAW=/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/campaigns/native-extended-20-v6/control/attempt-1/raw", "python3", "-m", "experiments.run_case", "--case", "C5", "--phase", "control", "--mitigator", "none", "--trial", "14", "--seed", "35014", "--warmup", "135.0", "--topology-size", "20", "--cumulative-lateral", "--label", "control20-C5-none"], "seconds": 263.49965381622314, "exit_code": 0}
-{"run": {"case": "C5", "phase": "control", "mitigator": "none", "trial": 15, "seed": 35015, "warmup": 135.0, "topology_size": 20, "cumulative_lateral": true, "label": "control20-C5-none"}, "attempt": 1, "command": ["env", "LANTERN_CONFIG=/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/campaigns/native-extended-20-v6/thresholds.json", "LANTERN_RAW=/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/campaigns/native-extended-20-v6/control/attempt-1/raw", "python3", "-m", "experiments.run_case", "--case", "C5", "--phase", "control", "--mitigator", "none", "--trial", "15", "--seed", "35015", "--warmup", "135.0", "--topology-size", "20", "--cumulative-lateral", "--label", "control20-C5-none"], "seconds": 272.29707169532776, "exit_code": 0}
-{"run": {"case": "C5", "phase": "control", "mitigator": "none", "trial": 16, "seed": 35016, "warmup": 135.0, "topology_size": 20, "cumulative_lateral": true, "label": "control20-C5-none"}, "attempt": 1, "command": ["env", "LANTERN_CONFIG=/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/campaigns/native-extended-20-v6/thresholds.json", "LANTERN_RAW=/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/campaigns/native-extended-20-v6/control/attempt-1/raw", "python3", "-m", "experiments.run_case", "--case", "C5", "--phase", "control", "--mitigator", "none", "--trial", "16", "--seed", "35016", "--warmup", "135.0", "--topology-size", "20", "--cumulative-lateral", "--label", "control20-C5-none"], "seconds": 281.6090955734253, "exit_code": 0}
-{"run": {"case": "C5", "phase": "control", "mitigator": "none", "trial": 17, "seed": 35017, "warmup": 135.0, "topology_size": 20, "cumulative_lateral": true, "label": "control20-C5-none"}, "attempt": 1, "command": ["env", "LANTERN_CONFIG=/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/campaigns/native-extended-20-v6/thresholds.json", "LANTERN_RAW=/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/campaigns/native-extended-20-v6/control/attempt-1/raw", "python3", "-m", "experiments.run_case", "--case", "C5", "--phase", "control", "--mitigator", "none", "--trial", "17", "--seed", "35017", "--warmup", "135.0", "--topology-size", "20", "--cumulative-lateral", "--label", "control20-C5-none"], "seconds": 256.6670548915863, "exit_code": 0}
-{"run": {"case": "C5", "phase": "control", "mitigator": "none", "trial": 18, "seed": 35018, "warmup": 135.0, "topology_size": 20, "cumulative_lateral": true, "label": "control20-C5-none"}, "attempt": 1, "command": ["env", "LANTERN_CONFIG=/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/campaigns/native-extended-20-v6/thresholds.json", "LANTERN_RAW=/mnt/c/Users/Madhuri/Desktop/project/cn-project-lantern-main/cn-project-lantern-main/results/campaigns/native-extended-20-v6/control/attempt-1/raw", "python3", "-m", "experiments.run_case", "--case", "C5", "--phase", "control", "--mitigator", "none", "--trial", "18", "--seed", "35018", "--warmup", "135.0", "--topology-size", "20", "--cumulative-lateral", "--label", "control20-C5-none"], "seconds": 260.0122740268707, "exit_code": 0}
-[99/545] control20-C5-none trial 19 attempt 1
-[99/545] control20-C5-none trial 19 attempt 2
-[99/545] control20-C5-none trial 19 attempt 3
-[100/545] control20-C5-none trial 20 attempt 1
-control C5 trial 20 complete; stopping at requested boundary
-extended evaluation complete: 2 runs
+[101/545] policy20-baseline-source-C2 trial 1 attempt 9
+  invalid attempt retained
+[101/545] policy20-baseline-source-C2 trial 1 attempt 10

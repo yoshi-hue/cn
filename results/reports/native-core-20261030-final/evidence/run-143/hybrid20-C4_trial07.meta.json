@@ -1,0 +1,22 @@
+{
+  "case": "C4",
+  "trial": 7,
+  "mitigator": "hybrid",
+  "seed": 50007,
+  "phase": "hybrid",
+  "measurement_protocol_version": 2,
+  "reverse": false,
+  "benign": false,
+  "warmup": 135.0,
+  "observation": 60,
+  "detector_mode": "hybrid",
+  "topology_size": 20,
+  "window_seconds": 10.0,
+  "profile_alpha": 0.2,
+  "cumulative_lateral": true,
+  "policy": "class",
+  "started_wall": 1793288548.8386562,
+  "evaluation_start": 1793288757.120998,
+  "recovery_start": 1793288798.7575245,
+  "ended_wall": 1793288851.0923495
+}

@@ -17,6 +17,7 @@ configured through the environment (see SETTINGS below):
 """
 
 import os
+import signal
 import time
 
 from ryu.base import app_manager
@@ -67,6 +68,9 @@ class LanternIDS(app_manager.RyuApp):
         self.epoch = time.monotonic()
         self.wall_epoch = time.time()
         self.event_log = EventLog(SETTINGS["log"], epoch=self.epoch)
+        self._closed = False
+        signal.signal(signal.SIGINT, self._handle_shutdown)
+        signal.signal(signal.SIGTERM, self._handle_shutdown)
         self.mac_to_port = {}
         self.datapaths = {}
 
@@ -398,8 +402,16 @@ class LanternIDS(app_manager.RyuApp):
         snapshot["windows_seen"] = self.graph_builder.windows_seen
         return snapshot
 
+    def _handle_shutdown(self, _signum, _frame):
+        """Flush the run terminator before Ryu tears down the app."""
+        self.close()
+        raise KeyboardInterrupt
+
     def close(self):
         """Called by Ryu on shutdown."""
+        if self._closed:
+            return
+        self._closed = True
         try:
             self.collector.stop()
             self.sampler.stop()

@@ -72,9 +72,12 @@ def source_hash():
 
 def container_command(run, raw, frozen=None):
     native = os.environ.get("LANTERN_NATIVE") == "1"
+    receiver_health_timeout = os.environ.get("LANTERN_RECEIVER_HEALTH_TIMEOUT")
     if native:
         command = ["python3", "-m", "experiments.run_case"]
         command = ["env", "LANTERN_RAW=" + str(raw)] + command
+        if receiver_health_timeout:
+            command.insert(1, "LANTERN_RECEIVER_HEALTH_TIMEOUT=" + receiver_health_timeout)
         if frozen:
             command.insert(1, "LANTERN_CONFIG=" + str(frozen))
     else:
@@ -103,6 +106,8 @@ def container_command(run, raw, frozen=None):
                 "-e",
                 "LANTERN_CONFIG=" + str(frozen.relative_to(ROOT)).replace("\\", "/"),
             ]
+        if receiver_health_timeout:
+            command += ["-e", "LANTERN_RECEIVER_HEALTH_TIMEOUT=" + receiver_health_timeout]
         command += [IMAGE, "python3", "-m", "experiments.run_case"]
     flag_names = {
         "topology_size": "topology-size",
@@ -198,7 +203,8 @@ def execute(directory, runs, frozen=None):
     for number, run in enumerate(runs, 1):
         verify_source(directory)
         success = False
-        for attempt in range(1, 6):
+        max_attempts = int(os.environ.get("LANTERN_MAX_ATTEMPTS", "10"))
+        for attempt in range(1, max_attempts + 1):
             # Separate directories retain every attempt. Existing successful
             # attempts are resumable; a partially written attempt is never reused.
             raw = directory / run["phase"] / ("attempt-%d" % attempt) / "raw"
@@ -210,6 +216,12 @@ def execute(directory, runs, frozen=None):
             if raw.exists() and list(raw.glob(log.stem + "*")):
                 continue
             raw.mkdir(parents=True, exist_ok=True)
+            driver_log = raw.parent / (log.stem + ".driver.log")
+            # A prior interrupted run may have left the attempt-level driver
+            # log behind even when the raw directory is incomplete. Preserve
+            # that attempt and use the next one rather than failing on open("x").
+            if driver_log.exists():
+                continue
             # Native Mininet runs can leave a namespace/veth behind after an
             # invalid startup. Clear only Mininet's own state before retrying.
             if os.environ.get("LANTERN_NATIVE") == "1" and os.environ.get("LANTERN_NATIVE_CLEAN") == "1":
@@ -226,7 +238,7 @@ def execute(directory, runs, frozen=None):
                 flush=True,
             )
             started = time.time()
-            with (raw.parent / (log.stem + ".driver.log")).open("x") as output:
+            with driver_log.open("x") as output:
                 result = subprocess.run(
                     cmd, cwd=str(ROOT), stdout=output, stderr=subprocess.STDOUT
                 )
